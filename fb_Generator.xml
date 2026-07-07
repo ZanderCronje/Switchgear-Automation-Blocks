@@ -1,0 +1,1321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="DHMBG_SwitchGear" version="1.0" creationDateTime="2026-06-24T07:57:19" modificationDateTime="2026-06-29T16:33:24">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <FunctionBlock name="fb_Generator">
+        <AddData>
+          <Data name="pouData" handleUnknown="preserve">
+            <PouData>
+              <ContentNode name="Metadata.meta" nodeType="MetadataDocument" displayName="Metadata">
+                <Xml xmlns="">
+                  <Metadata>
+                    <FolderType>PouFolder</FolderType>
+                    <ContentType>FunctionBlock</ContentType>
+                    <Kind>FunctionBlock</Kind>
+                    <Usings></Usings>
+                    <Id>64545331-43c4-4282-9564-a24dd95a3478</Id>
+                    <ItemGroup>
+                      <VariableWorksheet>
+                        <Id>e6bc3a5d-bf5d-4927-9b17-72c2ca271ac3</Id>
+                      </VariableWorksheet>
+                      <CodeWorksheet Include="Read.st">
+                        <Id>8de6fda2-c8ea-468f-8153-edf93b8de948</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>0</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="FSM.st">
+                        <Id>b1a2bef4-0392-477e-8a60-c9ef090766fe</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>1</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="Timers.st">
+                        <Id>a508e79b-e793-4788-b7e0-4b221085e36f</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>2</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="Set.st">
+                        <Id>2b63593a-82c5-486b-868e-515122f281fd</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>3</ParentIndex>
+                      </CodeWorksheet>
+                    </ItemGroup>
+                  </Metadata>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="VersionHistory.usermeta" nodeType="UserMetadata" displayName="Description">
+                <Xml xmlns="">
+                  <UserMetadataDoc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <UserMetadata Id="1be191c1-76d1-44d4-a578-3f9a61ddabac" xmlns="">
+                      <dcec>
+                        <dc:identifier></dc:identifier>
+                        <dc:title></dc:title>
+                      </dcec>
+                      <revTable />
+                      <DescriptionCollection>
+                        <Description relativePath=".\Description.html" format="HTML" />
+                        <Description relativePath=".\Description.rtf" format="RTF" />
+                      </DescriptionCollection>
+                    </UserMetadata>
+                  </UserMetadataDoc>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="Description.html" nodeType="UserMetadataDescription" displayName="Description.html" />
+              <ContentNode name="Resources.locreslst" nodeType="LocalResourcesListDocument" displayName="Resources" />
+              <ContentNode name="Variables.var.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="User.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <IsUser>true</IsUser>
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <VariableGroup name="Generator" id="2808ac91-10fa-46e0-b5b1-ab77ce14da7a" />
+              <VariableGroup name="Inputs" id="27460801-9031-4adb-a742-8fb640399881" />
+              <VariableGroup name="Timers" id="f026217c-f328-4727-9335-123125f7e489" />
+              <VariableGroup name="FSM" id="a71fb2a1-adfb-4630-b1fe-840927cc26b2" />
+              <VariableGroup name="EdgeDetection" id="1e41d79f-a0c1-46f3-b2be-2de509650fc1" />
+              <VariableGroup name="Internal" id="df94ec72-69d4-44a2-862f-a947c4835ab6" />
+              <VariableGroup name="Status" id="712ae73b-4510-4e98-ae30-dbf24510bfb7" />
+            </PouData>
+          </Data>
+        </AddData>
+        <Parameters>
+          <InoutVars>
+            <Variable name="Generator" orderWithinParamSet="0">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>12dd221d-9daf-4576-aa38-f51b2a23489a</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'2808ac91-10fa-46e0-b5b1-ab77ce14da7a'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Generator</TypeName>
+              </Type>
+            </Variable>
+          </InoutVars>
+          <InputVars>
+            <Variable name="xEnable" orderWithinParamSet="1">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>abcdb585-c023-4a25-bda8-e4b971c5ba09</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'27460801-9031-4adb-a742-8fb640399881'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xRemote" orderWithinParamSet="2">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>b7258c71-0594-497d-9fde-78c9b216fc16</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'27460801-9031-4adb-a742-8fb640399881'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xAUTO_StartRequest" orderWithinParamSet="3">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>94b05efc-b104-4eb3-b043-415329d3811d</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'27460801-9031-4adb-a742-8fb640399881'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xAUTO_StopRequest" orderWithinParamSet="4">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>43e6b17d-4758-4818-b404-081d70a71eff</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'27460801-9031-4adb-a742-8fb640399881'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xAUTO_ResetRequest" orderWithinParamSet="5">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>fafa9ef6-7adb-4332-8f95-8d738985b959</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'27460801-9031-4adb-a742-8fb640399881'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="tStartPulse" orderWithinParamSet="6">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>400270be-2b3d-4178-8078-958e0adb521c</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#500MS" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tStopPulse" orderWithinParamSet="7">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>968496ac-9400-427c-acfa-88962a319e93</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#500MS" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tResetPulse" orderWithinParamSet="8">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>35dc3bda-c2df-4460-ac6c-20d68d0dcb11</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#500MS" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tStartTimeout" orderWithinParamSet="9">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>6774bea6-4968-4d36-9a02-96ba04b3b526</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#30s" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tStopTimeout" orderWithinParamSet="10">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>7c30f189-b091-43a1-a33f-a8907d0d6871</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#30s" />
+              </InitialValue>
+            </Variable>
+          </InputVars>
+        </Parameters>
+        <Vars accessSpecifier="private">
+          <Variable name="tonStartTimeout">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>a1ba628f-2240-4e98-9cfd-d63f8d94b39d</Id>
+                  <SortOrder>11</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonStopTimeout">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>f814012c-51c5-42de-957c-f0a41a72c31b</Id>
+                  <SortOrder>12</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonStartPulse">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>109c393d-c60c-419d-a681-515135028dd5</Id>
+                  <SortOrder>13</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonStopPulse">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>2fb899b8-70a1-4842-973e-f6fe40ed686b</Id>
+                  <SortOrder>14</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonResetPulse">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>9cc4d698-087b-46a6-ab57-fc00d3b85f39</Id>
+                  <SortOrder>15</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'f026217c-f328-4727-9335-123125f7e489'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="GeneratorCurrentState">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>f6804dcd-13e7-4824-8b04-84d205149adb</Id>
+                  <SortOrder>16</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'a71fb2a1-adfb-4630-b1fe-840927cc26b2'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>GeneratorState</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="GeneratorNextState">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>306555ef-4fa1-4457-bed8-e30ba09f890b</Id>
+                  <SortOrder>17</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'a71fb2a1-adfb-4630-b1fe-840927cc26b2'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>GeneratorState</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtStartReq">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>5ec3f4e4-8446-43e4-91a2-dfd9f4ae5702</Id>
+                  <SortOrder>18</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'1e41d79f-a0c1-46f3-b2be-2de509650fc1'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtStopReq">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>24af556c-f0bf-43d7-a650-c69805ce0dd8</Id>
+                  <SortOrder>19</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'1e41d79f-a0c1-46f3-b2be-2de509650fc1'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtReset">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>cffa63dc-ebe1-4a97-b974-59d9e3c62c66</Id>
+                  <SortOrder>20</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'1e41d79f-a0c1-46f3-b2be-2de509650fc1'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xStartRequestActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>44024fd7-157b-42a6-88c5-86091473b20a</Id>
+                  <SortOrder>21</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xStopRequestActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>6a8cd1a5-5b04-4c07-8aa5-1719f563d064</Id>
+                  <SortOrder>22</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xResetRequestActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>d25f303b-073a-415e-aa86-f18741a99f28</Id>
+                  <SortOrder>23</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xStartPulseActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>ce1162a4-371e-4522-85e8-602737c4eea1</Id>
+                  <SortOrder>24</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xStopPulseActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>bbceab20-7976-4b74-87a2-42e7b3c2e105</Id>
+                  <SortOrder>25</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xResetPulseActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>8ec2d87c-af61-4096-9368-acaf063f49f3</Id>
+                  <SortOrder>26</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xControlAllowed">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>a0dfb813-5fe0-4a48-ab29-e907a17a7afe</Id>
+                  <SortOrder>27</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xCanStart">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>b2a5f30e-7554-4175-a0c2-12f7f4f4631c</Id>
+                  <SortOrder>28</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xCanStop">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>9e82952e-2c08-4bea-a89c-f64b0123fab4</Id>
+                  <SortOrder>29</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xCanReset">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>024be687-6219-45c5-ac3d-a5b074633f9b</Id>
+                  <SortOrder>30</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'df94ec72-69d4-44a2-862f-a947c4835ab6'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xIsAvailable">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>55c3836c-5a0f-424e-a8b0-a10a2eb6f0e1</Id>
+                  <SortOrder>31</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'712ae73b-4510-4e98-ae30-dbf24510bfb7'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xIsRunning">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>3231dda1-9d1d-4938-acd5-2c811022b95f</Id>
+                  <SortOrder>32</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'712ae73b-4510-4e98-ae30-dbf24510bfb7'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xIsReadyToLoad">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>ad029adb-7714-48d0-a062-2a92af5c4ab1</Id>
+                  <SortOrder>33</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'712ae73b-4510-4e98-ae30-dbf24510bfb7'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xIsOnLoad">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>61e3d5a6-854d-4a92-87f0-404b0ae77947</Id>
+                  <SortOrder>34</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'712ae73b-4510-4e98-ae30-dbf24510bfb7'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xBreakerOpen">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>3125b553-2266-4e74-9b5f-ed0f523b44ab</Id>
+                  <SortOrder>35</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'712ae73b-4510-4e98-ae30-dbf24510bfb7'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xBreakerClosed">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>48004696-bb90-48bf-92b1-547bd0b31e36</Id>
+                  <SortOrder>36</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'712ae73b-4510-4e98-ae30-dbf24510bfb7'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xBreakerInvalid">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>fe605644-9dad-42d6-bc3c-1406f1a2c0d5</Id>
+                  <SortOrder>37</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'712ae73b-4510-4e98-ae30-dbf24510bfb7'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xBreakerCmdFailed">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>39458d0e-5103-4c4f-b4c1-0eb0de4798f5</Id>
+                  <SortOrder>38</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'712ae73b-4510-4e98-ae30-dbf24510bfb7'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+        </Vars>
+        <MainBody>
+          <AddData>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Read</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>FSM</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Timers</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Set</Name>
+              </WorksheetData>
+            </Data>
+          </AddData>
+          <BodyContent xsi:type="ST">
+            <ST>
+{region 'Defaults and Mode Selection'}
+    //Initialise commands as false
+    Generator.DQ.xcmd_Start := FALSE;
+    Generator.DQ.xcmd_Stop  := FALSE;
+    Generator.DQ.xcmd_Reset := FALSE;
+    
+    //Command handling
+    CASE Generator.Mode OF
+        GeneratorMode#MANUAL:
+            xStartRequestActive := Generator.HMI.xStartRequest;
+            xStopRequestActive  := Generator.HMI.xStopRequest;
+            xResetRequestActive := Generator.HMI.xResetRequest;
+            xControlAllowed     := TRUE;
+    
+        GeneratorMode#AUTO:
+            xStartRequestActive := xAUTO_StartRequest;
+            xStopRequestActive  := xAUTO_StopRequest;
+            xResetRequestActive := xAUTO_ResetRequest;
+            xControlAllowed     := TRUE;
+    
+        GeneratorMode#EXTERNAL:
+            xStartRequestActive := FALSE;
+            xStopRequestActive  := FALSE;
+            xResetRequestActive := FALSE;
+            xControlAllowed     := FALSE;
+    END_CASE;
+{endregion}
+
+{region 'Edge Detection'}
+    //Rising Edge Detection
+    rtStartReq(CLK := xStartRequestActive);
+    rtStopReq(CLK := xStopRequestActive);
+    rtReset(CLK := xResetRequestActive);
+
+    IF Generator.Mode = GeneratorMode#MANUAL THEN
+        Generator.HMI.xStartRequest := FALSE;
+        Generator.HMI.xStopRequest  := FALSE;
+        Generator.HMI.xResetRequest := FALSE;
+    END_IF;
+{endregion}
+
+{region 'Feedback Evaluation'}
+    // Is Controller Available? 
+    xIsAvailable    := Generator.DI.xControllerAvailable;
+    
+    // Breaker Feedback
+    xBreakerOpen        := Generator.DI.xBreakerOpened AND NOT Generator.DI.xBreakerClosed;
+    xBreakerClosed      := Generator.DI.xBreakerClosed AND NOT Generator.DI.xBreakerOpened;
+    xBreakerInvalid     := Generator.DI.xBreakerOpened AND Generator.DI.xBreakerClosed;
+    xBreakerCmdFailed   := Generator.DI.xBreakerCmdFailed;
+
+    // Generator running / ready feedback.
+    xIsRunning      := Generator.DI.xReadyAndRunning;
+
+    xIsReadyToLoad  := Generator.DI.xReadyAndRunning
+                       AND Generator.DI.xControllerAvailable
+                       AND NOT Generator.Interlocks.xLoadBlocked;
+
+    xIsOnLoad       := xIsRunning AND xBreakerClosed;
+{endregion}
+
+{region 'Permissions'}
+    // Is the Generator allowed to Start?
+    xCanStart :=        xEnable
+                    AND xControlAllowed
+                    AND xRemote
+                    AND xIsAvailable
+                    AND NOT Generator.Interlocks.xStartBlocked
+                    AND NOT Generator.Interlocks.xAutoStartBlocked
+                    AND NOT Generator.Status.xFault
+                    AND NOT xIsRunning;
+    // Is the Generator allowed to Stop?
+    xCanStop :=         xEnable
+                    AND xControlAllowed
+                    AND xRemote
+                    AND NOT Generator.Interlocks.xStopBlocked
+                    AND xIsRunning;
+    // Is the Generator allowed to Reset?
+    xCanReset :=        xEnable
+                    AND xRemote;
+{endregion}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>//===================================================================
+//EXTERNAL:
+//    Observe and follow reality.
+
+//MANUAL/AUTO:
+//    Control must follow command sequence.
+//    Unexpected running/stopping becomes a fault/alarm.
+//===================================================================
+
+{region 'FSM Setup'}
+    GeneratorCurrentState := Generator.State;
+    GeneratorNextState    := GeneratorCurrentState;
+{endregion}
+
+{region 'Generator FSM'}
+    //is Gnerator Enabled?
+    IF NOT xEnable THEN
+        GeneratorNextState  := GeneratorState#UNKNOWN;
+        xStartPulseActive   := FALSE;
+        xStopPulseActive    := FALSE;
+        xResetPulseActive   := FALSE;
+    //Generator Breaker Feedback Impossible
+    ELSIF xBreakerInvalid THEN
+        GeneratorNextState              := GeneratorState#FAULT;
+        xStartPulseActive               := FALSE;
+        xStopPulseActive                := FALSE;
+        xResetPulseActive               := FALSE;
+        Generator.Status.xFault         := TRUE;
+        Generator.Status.xAlarm         := TRUE;
+        Generator.Status.xCmdFailed     := TRUE;
+    //Generator Breaker Failed to Open
+    ELSIF xBreakerCmdFailed THEN
+        GeneratorNextState              := GeneratorState#FAULT;
+        xStartPulseActive               := FALSE;
+        xStopPulseActive                := FALSE;
+        xResetPulseActive               := FALSE;
+        Generator.Status.xFault         := TRUE;
+        Generator.Status.xAlarm         := TRUE;
+
+    ELSE
+        CASE GeneratorCurrentState OF
+
+            GeneratorState#UNKNOWN:
+            {region 'Unknown Generator State'}
+
+                xStartPulseActive := FALSE;
+                xStopPulseActive  := FALSE;
+                xResetPulseActive := FALSE;
+                
+                // Determine Generator State
+                IF xIsOnLoad THEN
+                    GeneratorNextState := GeneratorState#RUNNING_LOAD;
+                ELSIF xIsRunning THEN
+                    GeneratorNextState := GeneratorState#RUNNING;
+                ELSE
+                    GeneratorNextState := GeneratorState#STOPPED;
+                END_IF;
+            {endregion}
+
+            GeneratorState#STOPPED:
+            {region 'Stopped Generator State'}
+                //PLC is Stoppped
+                xStopPulseActive := FALSE;
+            
+                CASE Generator.Mode OF
+            
+                    GeneratorMode#EXTERNAL:
+                        // In external mode, state follows feedback from the external controller.
+                        IF xIsOnLoad THEN
+                            GeneratorNextState := GeneratorState#RUNNING_LOAD;
+                        ELSIF xIsRunning THEN
+                            GeneratorNextState := GeneratorState#RUNNING;
+                        END_IF;
+            
+                    GeneratorMode#MANUAL,
+                    GeneratorMode#AUTO:
+                        // In PLC-controlled modes, starting must go through STARTING.
+                        IF rtStartReq.Q AND xCanStart THEN
+                            GeneratorNextState := GeneratorState#STARTING;
+                            xStartPulseActive  := TRUE;
+                        ELSIF xIsRunning THEN
+                            GeneratorNextState      := GeneratorState#FAULT;
+                            Generator.Status.xFault := TRUE;
+                            Generator.Status.xAlarm := TRUE;
+                        END_IF;
+                ELSE
+                    GeneratorNextState := GeneratorState#UNKNOWN;
+            
+                END_CASE;
+            {endregion}
+
+            GeneratorState#STARTING:
+            {region 'Generator Starting'}
+
+                CASE Generator.Mode OF
+
+                    GeneratorMode#EXTERNAL:
+                        // External mode does not own STARTING. Derive actual state.
+                        xStartPulseActive := FALSE;
+
+                        IF xIsOnLoad THEN
+                            GeneratorNextState := GeneratorState#RUNNING_LOAD;
+                        ELSIF xIsRunning THEN
+                            GeneratorNextState := GeneratorState#RUNNING;
+                        ELSE
+                            GeneratorNextState := GeneratorState#STOPPED;
+                        END_IF;
+
+                    GeneratorMode#MANUAL,
+                    GeneratorMode#AUTO:
+                        IF xIsOnLoad THEN
+                            GeneratorNextState            := GeneratorState#RUNNING_LOAD;
+                            xStartPulseActive             := FALSE;
+                            Generator.Status.xStartFailed := FALSE;
+                            Generator.Status.xCmdFailed   := FALSE;
+
+                        ELSIF xIsRunning THEN
+                            GeneratorNextState            := GeneratorState#RUNNING;
+                            xStartPulseActive             := FALSE;
+                            Generator.Status.xStartFailed := FALSE;
+                            Generator.Status.xCmdFailed   := FALSE;
+
+                        ELSIF tonStartTimeout.Q THEN
+                            GeneratorNextState            := GeneratorState#FAULT;
+                            xStartPulseActive             := FALSE;
+                            Generator.Status.xStartFailed := TRUE;
+                            Generator.Status.xCmdFailed   := TRUE;
+                            Generator.Status.xFault       := TRUE;
+                            Generator.Status.xAlarm       := TRUE;
+                        END_IF;
+                ELSE
+                    GeneratorNextState := GeneratorState#UNKNOWN;
+                END_CASE;
+            {endregion}
+
+            GeneratorState#RUNNING:
+            {region 'Generator Running'}
+                // Generator is Running with NO LOAD
+                xStartPulseActive := FALSE;
+
+                CASE Generator.Mode OF
+
+                    GeneratorMode#EXTERNAL:
+                        IF NOT xIsRunning THEN
+                            GeneratorNextState := GeneratorState#STOPPED;
+                        ELSIF xIsOnLoad THEN
+                            GeneratorNextState := GeneratorState#RUNNING_LOAD;
+                        END_IF;
+
+                    GeneratorMode#MANUAL,
+                    GeneratorMode#AUTO:
+                        IF NOT xIsRunning THEN
+                            // Generator stopped without this FB stopping it.
+                            GeneratorNextState      := GeneratorState#FAULT;
+                            Generator.Status.xFault := TRUE;
+                            Generator.Status.xAlarm := TRUE;
+
+                        ELSIF xIsOnLoad THEN
+                            GeneratorNextState := GeneratorState#RUNNING_LOAD;
+
+                        ELSIF rtStopReq.Q AND xCanStop THEN
+                            GeneratorNextState := GeneratorState#STOPPING;
+                            xStopPulseActive   := TRUE;
+                        END_IF;
+                ELSE
+                    GeneratorNextState := GeneratorState#UNKNOWN;
+                END_CASE;
+            {endregion}
+
+            GeneratorState#RUNNING_LOAD:
+            {region 'Generator Running On Load'}
+                //Generator is Running on Load - Breaker is Closed
+                xStartPulseActive := FALSE;
+
+                CASE Generator.Mode OF
+
+                    GeneratorMode#EXTERNAL:
+                        IF NOT xIsRunning THEN
+                            GeneratorNextState := GeneratorState#STOPPED;
+                        ELSIF NOT xIsOnLoad THEN
+                            GeneratorNextState := GeneratorState#RUNNING;
+                        END_IF;
+
+                    GeneratorMode#MANUAL,
+                    GeneratorMode#AUTO:
+                        IF NOT xIsRunning THEN
+                            GeneratorNextState      := GeneratorState#FAULT;
+                            Generator.Status.xFault := TRUE;
+                            Generator.Status.xAlarm := TRUE;
+
+                        ELSIF NOT xIsOnLoad THEN
+                            GeneratorNextState := GeneratorState#RUNNING;
+
+                        ELSIF rtStopReq.Q AND xCanStop THEN
+                            GeneratorNextState := GeneratorState#STOPPING;
+                            xStopPulseActive   := TRUE;
+                        END_IF;
+                ELSE
+                    GeneratorNextState := GeneratorState#UNKNOWN;
+                END_CASE;
+            {endregion}
+
+            GeneratorState#STOPPING:
+            {region 'Generator Stopping'}
+
+                CASE Generator.Mode OF
+
+                    GeneratorMode#EXTERNAL:
+                        // External mode does not own STOPPING. Derive actual state.
+                        xStopPulseActive := FALSE;
+
+                        IF xIsOnLoad THEN
+                            GeneratorNextState := GeneratorState#RUNNING_LOAD;
+                        ELSIF xIsRunning THEN
+                            GeneratorNextState := GeneratorState#RUNNING;
+                        ELSE
+                            GeneratorNextState := GeneratorState#STOPPED;
+                        END_IF;
+
+                    GeneratorMode#MANUAL,
+                    GeneratorMode#AUTO:
+                        IF NOT xIsRunning THEN
+                            GeneratorNextState           := GeneratorState#STOPPED;
+                            xStopPulseActive             := FALSE;
+                            Generator.Status.xStopFailed := FALSE;
+                            Generator.Status.xCmdFailed  := FALSE;
+
+                        ELSIF tonStopTimeout.Q THEN
+                            GeneratorNextState           := GeneratorState#FAULT;
+                            xStopPulseActive             := FALSE;
+                            Generator.Status.xStopFailed := TRUE;
+                            Generator.Status.xCmdFailed  := TRUE;
+                            Generator.Status.xFault      := TRUE;
+                            Generator.Status.xAlarm      := TRUE;
+                        END_IF;
+                ELSE
+                    GeneratorNextState := GeneratorState#UNKNOWN;
+                END_CASE;
+            {endregion}
+
+            GeneratorState#FAULT:
+            {region 'Generator Fault'}
+                //Generator is in Fault - Needs to be Reset
+                xStartPulseActive := FALSE;
+                xStopPulseActive  := FALSE;
+
+                IF rtReset.Q AND xCanReset THEN
+                    Generator.Status.xFault       := FALSE;
+                    Generator.Status.xAlarm       := FALSE;
+                    Generator.Status.xCmdFailed   := FALSE;
+                    Generator.Status.xStartFailed := FALSE;
+                    Generator.Status.xStopFailed  := FALSE;
+                    GeneratorNextState            := GeneratorState#UNKNOWN;
+                    xResetPulseActive             := TRUE;
+                END_IF;
+            {endregion}
+
+        ELSE
+            GeneratorNextState := GeneratorState#UNKNOWN;
+        END_CASE;
+    END_IF;
+{endregion}</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>
+{region 'Timer Control'}
+    tonStartPulse(
+        IN := xStartPulseActive,
+        PT := tStartPulse
+    );
+    tonStopPulse(
+        IN := xStopPulseActive,
+        PT := tStopPulse
+    );
+    tonResetPulse(
+        IN := xResetPulseActive,
+        PT := tResetPulse
+    );
+    tonStartTimeout(
+        IN := GeneratorNextState = GeneratorState#STARTING,
+        PT := tStartTimeout
+    );
+    tonStopTimeout(
+        IN := GeneratorNextState = GeneratorState#STOPPING,
+        PT := tStopTimeout
+    );
+{endregion}
+
+{region 'Pulse Control'}
+    //Start Pulse Control
+    IF tonStartPulse.Q  OR Generator.Interlocks.xStartBlocked
+                        OR Generator.Interlocks.xAutoStartBlocked
+                        OR NOT xControlAllowed 
+    THEN
+        xStartPulseActive := FALSE;
+    END_IF;
+
+    //Stop Pulse Control
+    IF tonStopPulse.Q   OR Generator.Interlocks.xStopBlocked
+                        OR NOT xControlAllowed 
+    THEN
+        xStopPulseActive := FALSE;
+    END_IF;
+
+    //Reset Pulse Control
+    IF tonResetPulse.Q  OR NOT xControlAllowed THEN
+        xResetPulseActive := FALSE;
+    END_IF;
+{endregion}</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>
+
+{region 'State &amp; Mode Values'}
+    //State Control:
+    Generator.State := GeneratorNextState;
+    //State Values:
+    CASE Generator.State OF
+        GeneratorState#UNKNOWN:      Generator.iState := 0;
+        GeneratorState#STOPPED:      Generator.iState := 1;
+        GeneratorState#STOPPING:     Generator.iState := 2;
+        GeneratorState#STARTING:     Generator.iState := 3;
+        GeneratorState#RUNNING:      Generator.iState := 4;
+        GeneratorState#RUNNING_LOAD: Generator.iState := 5;
+        GeneratorState#FAULT:        Generator.iState := 6;
+    ELSE
+        Generator.iState := 0;
+    END_CASE;
+    //Mode Values:
+    CASE Generator.Mode OF
+        GeneratorMode#MANUAL:        Generator.iMode := 0;
+        GeneratorMode#AUTO:          Generator.iMode := 1;
+        GeneratorMode#EXTERNAL:      Generator.iMode := 2;
+    ELSE
+        Generator.iMode := 0;
+    END_CASE;
+{endregion}
+
+{region 'Commands'}
+    Generator.DQ.xcmd_Start := xStartPulseActive    AND NOT tonStartPulse.Q;
+    Generator.DQ.xcmd_Stop  := xStopPulseActive     AND NOT tonStopPulse.Q;
+    Generator.DQ.xcmd_Reset := xResetPulseActive    AND NOT tonResetPulse.Q;
+{endregion}
+
+{region 'Safety Outputs'}
+    Generator.DQ.xAutoStartInhibit := Generator.Interlocks.xAutoStartBlocked;
+    Generator.DQ.xLoadInhibit      := Generator.Interlocks.xLoadBlocked;
+{endregion}
+
+{region 'Set Statuses'}
+    // Available means healthy and usable, not only controller present.
+    Generator.Status.xAvailable     :=  xIsAvailable
+                                        AND NOT Generator.Status.xFault;
+
+    // Running is physical feedback, so it may stay TRUE even during a fault.
+    Generator.Status.xRunning       := xIsRunning;
+
+    // Ready to load means the generator can safely accept load.
+    Generator.Status.xReadyToLoad   :=  xIsReadyToLoad
+                                        AND NOT Generator.Status.xFault;
+
+    Generator.Status.xRemote        :=  xRemote;
+
+    //Command is Busy
+    Generator.Status.xCmdBusy       :=      (GeneratorNextState = GeneratorState#STARTING)
+                                        OR  (GeneratorNextState = GeneratorState#STOPPING);
+{endregion}</ST>
+          </BodyContent>
+        </MainBody>
+      </FunctionBlock>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>

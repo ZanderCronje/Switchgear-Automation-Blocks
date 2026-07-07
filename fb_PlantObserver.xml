@@ -1,0 +1,1095 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="DHMBG_SwitchGear" version="1.0" creationDateTime="2026-06-24T07:57:19" modificationDateTime="2026-06-30T08:55:23">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <FunctionBlock name="fb_PlantObserver">
+        <AddData>
+          <Data name="pouData" handleUnknown="preserve">
+            <PouData>
+              <ContentNode name="Metadata.meta" nodeType="MetadataDocument" displayName="Metadata">
+                <Xml xmlns="">
+                  <Metadata>
+                    <FolderType>PouFolder</FolderType>
+                    <ContentType>FunctionBlock</ContentType>
+                    <Kind>FunctionBlock</Kind>
+                    <Usings></Usings>
+                    <Id>73ca5a88-4150-4ff9-92f4-b151063bb08d</Id>
+                    <ItemGroup>
+                      <VariableWorksheet>
+                        <Id>3c21092e-2cdd-4a44-8349-8a760491495d</Id>
+                      </VariableWorksheet>
+                      <CodeWorksheet Include="Read_Statuses.st">
+                        <Id>15a1d024-0416-4e2b-a8ac-c2f3d0405565</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>0</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="Observe_Topology.st">
+                        <Id>9aef8b84-ffd1-42b0-b158-3fa5625927a2</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>1</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="Set_Plant.st">
+                        <Id>c5d904aa-b80b-4aea-89d4-0d2613320765</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>2</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="Messages.st">
+                        <Id>7768f2fb-2c5a-4f7b-a7d1-6d725c385c93</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>3</ParentIndex>
+                      </CodeWorksheet>
+                    </ItemGroup>
+                  </Metadata>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="VersionHistory.usermeta" nodeType="UserMetadata" displayName="Description">
+                <Xml xmlns="">
+                  <UserMetadataDoc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <UserMetadata Id="1be191c1-76d1-44d4-a578-3f9a61ddabac" xmlns="">
+                      <dcec>
+                        <dc:identifier></dc:identifier>
+                        <dc:title></dc:title>
+                      </dcec>
+                      <revTable />
+                      <DescriptionCollection>
+                        <Description relativePath=".\Description.html" format="HTML" />
+                        <Description relativePath=".\Description.rtf" format="RTF" />
+                      </DescriptionCollection>
+                    </UserMetadata>
+                  </UserMetadataDoc>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="Description.html" nodeType="UserMetadataDescription" displayName="Description.html" />
+              <ContentNode name="Resources.locreslst" nodeType="LocalResourcesListDocument" displayName="Resources" />
+              <ContentNode name="Variables.var.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <NextResourceID>101</NextResourceID>
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="User.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <IsUser>true</IsUser>
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <VariableGroup name="Plant" id="92a81205-a2e2-462f-a69d-09b5601b3114" />
+              <VariableGroup name="Observer Config" id="66bd5333-7076-4c5a-ad5b-ac2b27c3acf3" />
+              <VariableGroup name="Breakers" id="87d691dd-a686-488b-92cb-77e3872ec7bf" />
+              <VariableGroup name="Generators" id="10aa6397-beef-46ce-ba84-1202dd2faec9" />
+              <VariableGroup name="Local Evaluation" id="20114c2c-d52e-4f05-bac2-a00be50eb987" />
+            </PouData>
+          </Data>
+        </AddData>
+        <Parameters>
+          <InoutVars>
+            <Variable name="Plant" orderWithinParamSet="0">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>e011d367-1773-41a9-8b64-8a303b58fc29</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'92a81205-a2e2-462f-a69d-09b5601b3114'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Plant</TypeName>
+              </Type>
+            </Variable>
+          </InoutVars>
+          <InputVars>
+            <Variable name="ObserverLevel" orderWithinParamSet="2">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>2884f781-9d8c-437b-be0c-d8d148afffc2</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'66bd5333-7076-4c5a-ad5b-ac2b27c3acf3'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>PlantObserverLevel</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="IncomerBreaker" orderWithinParamSet="3">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>ae264a5b-8ab4-4bda-9727-ef9a577bc137</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Gen1Breaker" orderWithinParamSet="4">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>f3c26822-1fe6-411f-b891-896f7b452e37</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Gen2Breaker" orderWithinParamSet="5">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>10250eea-4f32-46de-96e3-af5a45651da1</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Gen3Breaker" orderWithinParamSet="6">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>45e023ae-517d-4144-b72e-b97c416f841a</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="SolarBreaker" orderWithinParamSet="7">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>9a6a8145-fc9c-49e1-ba1d-bcd4aab37f5a</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Bus1Breaker" orderWithinParamSet="8">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>986b8c7c-0f40-4543-9268-877f8f071484</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Bus2Breaker" orderWithinParamSet="9">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>52455013-ecb5-4fda-b879-bfa489c4c758</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Feeder1Breaker" orderWithinParamSet="10">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>b82195d9-5786-4269-8841-c259415b8411</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Feeder2Breaker" orderWithinParamSet="11">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>ac34a19d-1fa8-4e24-9416-7d8b3bbe9906</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'87d691dd-a686-488b-92cb-77e3872ec7bf'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Gen1" orderWithinParamSet="12">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>05d62b30-069b-4e57-8cd2-3b57a7cdee90</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'10aa6397-beef-46ce-ba84-1202dd2faec9'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Generator</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Gen2" orderWithinParamSet="13">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>6cc80373-902a-41d9-9845-db002a3bc530</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'10aa6397-beef-46ce-ba84-1202dd2faec9'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Generator</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="Gen3" orderWithinParamSet="14">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>eca0f837-515d-4575-9f46-cc42efedfb7c</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'10aa6397-beef-46ce-ba84-1202dd2faec9'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Generator</TypeName>
+              </Type>
+            </Variable>
+          </InputVars>
+        </Parameters>
+        <Vars accessSpecifier="private">
+          <Variable name="PlantNextTopology">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>b921358a-2820-4fc4-8309-5c49142759a5</Id>
+                  <SortOrder>1</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'92a81205-a2e2-462f-a69d-09b5601b3114'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>PlantTopology</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xAnyBreakerFault">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>a13df3fe-cfe0-4af3-aa88-8ba648b162ac</Id>
+                  <SortOrder>15</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xAnyBreakerInvalid">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>47b30d76-80cd-44f8-8b1f-47ce747b1d3d</Id>
+                  <SortOrder>16</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xAnyBreakerAlarm">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>d553ab2e-ca23-48ab-8ea3-6d843218a113</Id>
+                  <SortOrder>17</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xUtilityConnected">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>dec268e6-7170-40df-b1f9-6969c235f52d</Id>
+                  <SortOrder>18</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xGeneratorConnected">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>35dd9687-46a7-47e7-9ac7-3251f68eca55</Id>
+                  <SortOrder>19</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xSolarConnected">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>bb6b68e8-acf4-4595-84e6-b425676a5150</Id>
+                  <SortOrder>20</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xAnySourceConnected">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>30ae879d-a4df-4194-aa51-228a37864346</Id>
+                  <SortOrder>21</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xMultipleSources">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>27e80963-7276-4c10-807e-262ed3a4c84e</Id>
+                  <SortOrder>22</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="uiGeneratorsConnected">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>faa46b42-55cc-4ece-8bd2-9a7ee772bfb7</Id>
+                  <SortOrder>23</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="uiSourcesConnected">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>a578d436-303d-4a4b-86c0-0269d8939f2a</Id>
+                  <SortOrder>24</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="uiMessageIndex">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>8e9c8ffb-0c22-4675-b7e5-bf3ab17858a8</Id>
+                  <SortOrder>25</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'20114c2c-d52e-4f05-bac2-a00be50eb987'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Variable>
+        </Vars>
+        <MainBody>
+          <AddData>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Read_Statuses</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Observe_Topology</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Set_Plant</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Messages</Name>
+              </WorksheetData>
+            </Data>
+          </AddData>
+          <BodyContent xsi:type="ST">
+            <ST>
+//Read Breaker Statusus
+{region 'Read Breakers'}
+    Plant.BreakerStatus.xIncomerClosed := IncomerBreaker.State = BreakerState#CLOSED;
+    Plant.BreakerStatus.xGen1Closed    := Gen1Breaker.State    = BreakerState#CLOSED;
+    Plant.BreakerStatus.xGen2Closed    := Gen2Breaker.State    = BreakerState#CLOSED;
+    Plant.BreakerStatus.xGen3Closed    := Gen3Breaker.State    = BreakerState#CLOSED;
+    Plant.BreakerStatus.xSolarClosed   := SolarBreaker.State   = BreakerState#CLOSED;
+    Plant.BreakerStatus.xBus1Closed    := Bus1Breaker.State    = BreakerState#CLOSED;
+    Plant.BreakerStatus.xBus2Closed    := Bus2Breaker.State    = BreakerState#CLOSED;
+    Plant.BreakerStatus.xFeeder1Closed := Feeder1Breaker.State = BreakerState#CLOSED;
+    Plant.BreakerStatus.xFeeder2Closed := Feeder2Breaker.State = BreakerState#CLOSED;
+{endregion}
+
+//Read Generator Statuses
+{region 'Read Generators'}
+    Plant.GeneratorStatus.xGen1Available   := Gen1.Status.xAvailable;
+    Plant.GeneratorStatus.xGen2Available   := Gen2.Status.xAvailable;
+    Plant.GeneratorStatus.xGen3Available   := Gen3.Status.xAvailable;
+    Plant.GeneratorStatus.xGen1Running     := Gen1.Status.xRunning;
+    Plant.GeneratorStatus.xGen2Running     := Gen2.Status.xRunning;
+    Plant.GeneratorStatus.xGen3Running     := Gen3.Status.xRunning;
+    Plant.GeneratorStatus.xGen1ReadyToLoad := Gen1.Status.xReadyToLoad;
+    Plant.GeneratorStatus.xGen2ReadyToLoad := Gen2.Status.xReadyToLoad;
+    Plant.GeneratorStatus.xGen3ReadyToLoad := Gen3.Status.xReadyToLoad;
+    Plant.GeneratorStatus.xGen1Fault       := Gen1.Status.xFault;
+    Plant.GeneratorStatus.xGen2Fault       := Gen2.Status.xFault;
+    Plant.GeneratorStatus.xGen3Fault       := Gen3.Status.xFault;
+    Plant.GeneratorStatus.xGen1Alarm       := Gen1.Status.xAlarm;
+    Plant.GeneratorStatus.xGen2Alarm       := Gen2.Status.xAlarm;
+    Plant.GeneratorStatus.xGen3Alarm       := Gen3.Status.xAlarm;
+    Plant.GeneratorStatus.xGen1CmdFailed   := Gen1.Status.xCmdFailed;
+    Plant.GeneratorStatus.xGen2CmdFailed   := Gen2.Status.xCmdFailed;
+    Plant.GeneratorStatus.xGen3CmdFailed   := Gen3.Status.xCmdFailed;
+{endregion}</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>
+{region 'Breaker Logic'}
+    //Default Plant Topology
+    PlantNextTopology   := PlantTopology#UNKNOWN;
+
+    //Is Utility connected?
+    xUtilityConnected   := Plant.BreakerStatus.xIncomerClosed;
+    //Is Solar Connected?
+    xSolarConnected     := Plant.BreakerStatus.xSolarClosed;
+
+    //How many Generators are Connected?
+    uiGeneratorsConnected := 0;
+        IF Plant.BreakerStatus.xGen1Closed THEN
+            uiGeneratorsConnected := uiGeneratorsConnected + 1;
+        END_IF;
+        IF Plant.BreakerStatus.xGen2Closed THEN
+            uiGeneratorsConnected := uiGeneratorsConnected + 1;
+        END_IF;
+        IF Plant.BreakerStatus.xGen3Closed THEN
+            uiGeneratorsConnected := uiGeneratorsConnected + 1;
+        END_IF;
+    //Are any Generators Connected?
+    xGeneratorConnected := uiGeneratorsConnected &gt; 0;
+    
+    //How many Sources are Connected?
+    uiSourcesConnected := 0;
+        IF xUtilityConnected THEN
+            uiSourcesConnected := uiSourcesConnected + 1;
+        END_IF;
+        IF xGeneratorConnected THEN
+            uiSourcesConnected := uiSourcesConnected + 1;
+        END_IF;
+        IF xSolarConnected THEN
+            uiSourcesConnected := uiSourcesConnected + 1;
+        END_IF;
+    //Are Any Sources Connected?
+    xAnySourceConnected := uiSourcesConnected &gt; 0;
+    xMultipleSources    := uiSourcesConnected &gt; 1;
+    
+    //Are any breakers in Fault?
+    xAnyBreakerFault :=     IncomerBreaker.Status.xFault
+                            OR Gen1Breaker.Status.xFault
+                            OR Gen2Breaker.Status.xFault
+                            OR Gen3Breaker.Status.xFault
+                            OR SolarBreaker.Status.xFault
+                            OR Bus1Breaker.Status.xFault
+                            OR Bus2Breaker.Status.xFault
+                            OR Feeder1Breaker.Status.xFault
+                            OR Feeder2Breaker.Status.xFault;
+    
+    //Do any breakers have Invalid Feedback?
+    xAnyBreakerInvalid :=   IncomerBreaker.Status.xInvalidState
+                            OR Gen1Breaker.Status.xInvalidState
+                            OR Gen2Breaker.Status.xInvalidState
+                            OR Gen3Breaker.Status.xInvalidState
+                            OR SolarBreaker.Status.xInvalidState
+                            OR Bus1Breaker.Status.xInvalidState
+                            OR Bus2Breaker.Status.xInvalidState
+                            OR Feeder1Breaker.Status.xInvalidState
+                            OR Feeder2Breaker.Status.xInvalidState;
+    
+    //Are any breakers in Alarm?
+    xAnyBreakerAlarm :=     IncomerBreaker.Status.xAlarm
+                            OR Gen1Breaker.Status.xAlarm
+                            OR Gen2Breaker.Status.xAlarm
+                            OR Gen3Breaker.Status.xAlarm
+                            OR SolarBreaker.Status.xAlarm
+                            OR Bus1Breaker.Status.xAlarm
+                            OR Bus2Breaker.Status.xAlarm
+                            OR Feeder1Breaker.Status.xAlarm
+                            OR Feeder2Breaker.Status.xAlarm;
+    
+    
+{endregion}
+
+{region 'Topology Logic'}
+    CASE ObserverLevel OF
+
+        PlantObserverLevel#LEVEL_0_BREAKERS:    //Only use Breakers to determine Topology
+        {region 'Level 0'}
+            IF NOT xAnySourceConnected THEN
+                PlantNextTopology := PlantTopology#BLACKOUT;
+
+            ELSIF xUtilityConnected AND NOT xGeneratorConnected AND NOT xSolarConnected THEN
+                PlantNextTopology := PlantTopology#UTILITY_ONLY;
+
+            ELSIF xGeneratorConnected AND NOT xUtilityConnected AND NOT xSolarConnected THEN
+                PlantNextTopology := PlantTopology#GENERATOR_ONLY;
+
+            ELSIF xSolarConnected AND NOT xUtilityConnected AND NOT xGeneratorConnected THEN
+                PlantNextTopology := PlantTopology#SOLAR_ONLY;
+
+            ELSIF xUtilityConnected AND xSolarConnected AND NOT xGeneratorConnected THEN
+                PlantNextTopology := PlantTopology#UTILITY_SOLAR;
+
+            ELSIF xUtilityConnected AND xGeneratorConnected AND NOT xSolarConnected THEN
+                PlantNextTopology := PlantTopology#UTILITY_GENERATOR;
+
+            ELSIF xGeneratorConnected AND xSolarConnected AND NOT xUtilityConnected THEN
+                PlantNextTopology := PlantTopology#GENERATOR_SOLAR;
+
+            ELSIF xUtilityConnected AND xGeneratorConnected AND xSolarConnected THEN
+                PlantNextTopology := PlantTopology#UTILITY_GENERATOR_SOLAR;
+
+            ELSE
+                PlantNextTopology := PlantTopology#UNKNOWN;
+            END_IF;
+        {endregion}
+
+    ELSE
+        PlantNextTopology := PlantTopology#UNKNOWN;
+    END_CASE;
+
+{endregion}</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>
+
+{region 'Set Plant Topology'}
+    Plant.Topology := PlantNextTopology;
+
+    CASE Plant.Topology OF
+        PlantTopology#UNKNOWN:                 Plant.iTopology := 0;
+        PlantTopology#BLACKOUT:                Plant.iTopology := 1;
+        PlantTopology#UTILITY_ONLY:            Plant.iTopology := 2;
+        PlantTopology#GENERATOR_ONLY:          Plant.iTopology := 3;
+        PlantTopology#SOLAR_ONLY:              Plant.iTopology := 4;
+        PlantTopology#UTILITY_SOLAR:           Plant.iTopology := 5;
+        PlantTopology#UTILITY_GENERATOR:       Plant.iTopology := 6;
+        PlantTopology#GENERATOR_SOLAR:         Plant.iTopology := 7;
+        PlantTopology#UTILITY_GENERATOR_SOLAR: Plant.iTopology := 8;
+    ELSE
+        Plant.iTopology := 0;
+    END_CASE;
+
+{endregion}
+
+{region 'Set Plant Facts'}
+    //Utility Facts
+    Plant.Facts.xUtilityConnected               := xUtilityConnected;
+    
+    //Source Facts
+    Plant.Facts.xSolarConnected                 := xSolarConnected;
+    Plant.Facts.xAnySourceConnected             := xAnySourceConnected;
+    Plant.Facts.xMultipleSourcesConnected       := xMultipleSources;
+    Plant.Facts.xMultipleGeneratorsConnected    := uiGeneratorsConnected &gt; 1;
+    
+    //Bus Facts
+    Plant.Facts.xUtilityGeneratorBusesConnected     :=  Plant.BreakerStatus.xBus1Closed 
+                                                        AND Plant.BreakerStatus.xBus2Closed;
+
+    Plant.Facts.xUtilityGeneratorBusesDisconnected  :=  NOT Plant.BreakerStatus.xBus1Closed 
+                                                        AND NOT Plant.BreakerStatus.xBus2Closed;
+    
+    Plant.Facts.xUtilityGeneratorBusTiePartial      :=  Plant.BreakerStatus.xBus1Closed 
+                                                        XOR Plant.BreakerStatus.xBus2Closed; 
+    
+    //Generator Facts
+    Plant.Facts.xGeneratorConnected             :=  xGeneratorConnected;
+    Plant.Facts.xGeneratorAvailable             :=  Plant.GeneratorStatus.xGen1Available
+                                                    OR Plant.GeneratorStatus.xGen2Available
+                                                    OR Plant.GeneratorStatus.xGen3Available;
+                                                   
+    //Breaker Facts
+    Plant.Facts.xBreakerFaultPresent            :=  xAnyBreakerFault;
+    Plant.Facts.xBreakerInvalidPresent          :=  xAnyBreakerInvalid;
+    Plant.Facts.xBreakerAlarmPresent            :=  xAnyBreakerAlarm;
+    
+    //Transfer Facts
+    Plant.Facts.xUtilityGeneratorParallel       :=  xUtilityConnected 
+                                                    AND xGeneratorConnected
+                                                    AND Plant.Facts.xUtilityGeneratorBusesConnected;
+    
+    Plant.Facts.xUtilitySolarParallel           :=  xUtilityConnected
+                                                    AND xSolarConnected;
+    
+    Plant.Facts.xGeneratorSolarParallel         :=  xGeneratorConnected
+                                                    AND xSolarConnected
+                                                    AND Plant.Facts.xUtilityGeneratorBusesConnected;
+    
+    Plant.Facts.xParallelSourcesActive          :=  Plant.Facts.xUtilityGeneratorParallel
+                                                    OR Plant.Facts.xUtilitySolarParallel
+                                                    OR Plant.Facts.xGeneratorSolarParallel;
+    
+{endregion}</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>
+
+{region 'Clear Messages'}
+    //Clear Previous Messages
+    FOR uiMessageIndex := 1 TO 10 DO
+        Plant.Messages[uiMessageIndex].xActive   := FALSE;
+        Plant.Messages[uiMessageIndex].Severity  := PlantMessageSeverity#INFO;
+        Plant.Messages[uiMessageIndex].iSeverity := 0;
+        Plant.Messages[uiMessageIndex].Code      := PlantMessageCode#NONE;
+        Plant.Messages[uiMessageIndex].iCode     := 0;
+        Plant.Messages[uiMessageIndex].sMessage  := '';
+    END_FOR;
+    Plant.uiMessageCount := 0;
+{endregion}
+
+{region 'Alarm Messages'}
+    // Highest priority: at least one breaker has a fault.
+    IF Plant.Facts.xBreakerFaultPresent THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#ALARM;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 2;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#BREAKER_FAULT_PRESENT;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 12;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Breaker fault present';
+        END_IF;
+    END_IF;
+    
+    // Highest priority: at least one breaker has invalid feedback.
+    IF Plant.Facts.xBreakerInvalidPresent THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#ALARM;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 2;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#BREAKER_INVALID_PRESENT;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 13;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Breaker invalid feedback present';
+        END_IF;
+    END_IF;
+
+    // Lower priority: generic breaker alarm.
+    // Only show this if there is no breaker fault or invalid feedback already shown.
+    IF Plant.Facts.xBreakerAlarmPresent
+    AND NOT Plant.Facts.xBreakerFaultPresent
+    AND NOT Plant.Facts.xBreakerInvalidPresent THEN
+
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#WARNING;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 1;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#BREAKER_ALARM_PRESENT;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 14;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Breaker alarm present';
+        END_IF;
+    END_IF;
+
+{endregion}
+
+{region 'Source Messages'}
+    //Utility Connected
+    IF Plant.Facts.xUtilityConnected THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#INFO;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 0;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#UTILITY_CONNECTED;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 9;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Utility source connected';
+        END_IF;
+    END_IF;
+    //Generator Connected
+    IF Plant.Facts.xGeneratorConnected THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+    
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#INFO;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 0;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#GENERATOR_CONNECTED;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 10;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Generator source connected';
+        END_IF;
+    END_IF;  
+    //Solar Connected
+    IF Plant.Facts.xSolarConnected THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#INFO;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 0;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#SOLAR_CONNECTED;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 11;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Solar source connected';
+        END_IF;
+    END_IF;
+{endregion}
+
+{region 'Bus Section Messages'}
+    // Utility &amp; generator bus sections connected
+    IF Plant.Facts.xUtilityGeneratorBusesConnected THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+    
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#INFO;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 0;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#UTILITY_GENERATOR_BUSES_CONNECTED;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 15;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Utility/generator buses connected';
+        END_IF;
+    END_IF;
+    
+    // Utility &amp; generator bus sections disconnected
+    IF Plant.Facts.xUtilityGeneratorBusesDisconnected THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+    
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#INFO;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 0;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#UTILITY_GENERATOR_BUSES_DISCONNECTED;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 16;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Utility/generator buses disconnected';
+        END_IF;
+    END_IF;
+    
+    // One bus tie breaker closed, the other open
+    IF Plant.Facts.xUtilityGeneratorBusTiePartial THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+    
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#WARNING;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 1;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#UTILITY_GENERATOR_BUS_TIE_PARTIAL;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 17;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Utility/generator bus tie partial';
+        END_IF;
+    END_IF;
+{endregion}
+
+{region 'Condition Messages'}
+
+    //Blackout - No sources Connected
+    IF Plant.Topology = PlantTopology#BLACKOUT THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#WARNING;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 1;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#BLACKOUT;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 1;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'No source connected';
+        END_IF;
+    END_IF;
+    
+    //Unknow Plant Topology
+    IF Plant.Topology = PlantTopology#UNKNOWN THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#ALARM;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 2;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#UNKNOWN_TOPOLOGY;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 2;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Unknown plant topology';
+        END_IF;
+    END_IF;
+
+    //Multiple Sources Connected in Parallel
+    IF Plant.Facts.xParallelSourcesActive THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#WARNING;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 1;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#MULTIPLE_SOURCES_CONNECTED;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 3;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Multiple sources connected';
+        END_IF;
+    END_IF;
+    
+    //Utility &amp; Generator Connected in Parallel
+    IF Plant.Facts.xUtilityGeneratorParallel THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#WARNING;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 1;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#UTILITY_GENERATOR_PARALLEL;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 4;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Utility and generator sources connected';
+        END_IF;
+    END_IF;
+
+    //Utility &amp; Solar Connected in Parallel
+    IF Plant.Facts.xUtilitySolarParallel THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#WARNING;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 1;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#UTILITY_SOLAR_PARALLEL;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 5;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Utility and solar sources connected';
+        END_IF;
+    END_IF;
+
+    //Generator &amp; Solar Connected in Parallel
+    IF Plant.Facts.xGeneratorSolarParallel THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#WARNING;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 1;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#GENERATOR_SOLAR_PARALLEL;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 6;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Generator and solar sources connected';
+        END_IF;
+    END_IF;
+
+    //Multiple Generators Connected
+    IF Plant.Facts.xMultipleGeneratorsConnected THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#INFO;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 0;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#MULTIPLE_GENERATORS_CONNECTED;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 7;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Multiple generators connected';
+        END_IF;
+    END_IF;
+
+    //Requested Observer Complexity Level not Supported
+    IF ObserverLevel &lt;&gt; PlantObserverLevel#LEVEL_0_BREAKERS THEN
+        IF Plant.uiMessageCount &lt; 10 THEN
+            Plant.uiMessageCount := Plant.uiMessageCount + 1;
+
+            Plant.Messages[Plant.uiMessageCount].xActive   := TRUE;
+            Plant.Messages[Plant.uiMessageCount].Severity  := PlantMessageSeverity#ALARM;
+            Plant.Messages[Plant.uiMessageCount].iSeverity := 2;
+            Plant.Messages[Plant.uiMessageCount].Code      := PlantMessageCode#UNSUPPORTED_OBSERVER_LEVEL;
+            Plant.Messages[Plant.uiMessageCount].iCode     := 8;
+            Plant.Messages[Plant.uiMessageCount].sMessage  := 'Unsupported observer level';
+        END_IF;
+    END_IF;
+
+{endregion}
+
+
+
+
+
+</ST>
+          </BodyContent>
+        </MainBody>
+      </FunctionBlock>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>

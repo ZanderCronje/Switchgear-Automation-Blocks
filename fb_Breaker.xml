@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="DHMBG_SwitchGear" version="1.0" creationDateTime="2026-06-24T07:57:19" modificationDateTime="2026-06-29T16:33:24">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <FunctionBlock name="fb_Breaker">
+        <AddData>
+          <Data name="pouData" handleUnknown="preserve">
+            <PouData>
+              <ContentNode name="Metadata.meta" nodeType="MetadataDocument" displayName="Metadata">
+                <Xml xmlns="">
+                  <Metadata>
+                    <FolderType>PouFolder</FolderType>
+                    <ContentType>FunctionBlock</ContentType>
+                    <Kind>FunctionBlock</Kind>
+                    <Usings></Usings>
+                    <Id>bcc846f6-3d58-4ee2-bea9-421ba9b69d6e</Id>
+                    <ItemGroup>
+                      <VariableWorksheet>
+                        <Id>c20fcd4c-4bfe-49af-8a25-8d147cd81951</Id>
+                      </VariableWorksheet>
+                      <CodeWorksheet Include="Read.st">
+                        <Id>e7c8a4ad-e581-42f0-b6e3-d00624bf8692</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>0</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="FSM.st">
+                        <Id>71e00cc7-9dd5-48bc-a18d-bf0ffa97018f</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>1</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="Timers.st">
+                        <Id>5fc3f783-1135-4009-bd8e-9e3a4c5c653f</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>2</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="Set.st">
+                        <Id>4d53c665-d2ac-45bc-b77d-1d1141176476</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>3</ParentIndex>
+                      </CodeWorksheet>
+                    </ItemGroup>
+                  </Metadata>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="VersionHistory.usermeta" nodeType="UserMetadata" displayName="Description">
+                <Xml xmlns="">
+                  <UserMetadataDoc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <UserMetadata Id="1be191c1-76d1-44d4-a578-3f9a61ddabac" xmlns="">
+                      <dcec>
+                        <dc:identifier></dc:identifier>
+                        <dc:title></dc:title>
+                      </dcec>
+                      <revTable />
+                      <DescriptionCollection>
+                        <Description relativePath=".\Description.html" format="HTML" />
+                        <Description relativePath=".\Description.rtf" format="RTF" />
+                      </DescriptionCollection>
+                    </UserMetadata>
+                  </UserMetadataDoc>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="Description.html" nodeType="UserMetadataDescription" displayName="Description.html" />
+              <ContentNode name="Resources.locreslst" nodeType="LocalResourcesListDocument" displayName="Resources" />
+              <ContentNode name="Variables.var.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="User.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <IsUser>true</IsUser>
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <VariableGroup name="Breaker" id="ade9df11-40a7-40ba-b46e-6d54b196f186" />
+              <VariableGroup name="Timers" id="3335c6d1-f64e-46ba-a23c-22eda14dead3" />
+              <VariableGroup name="Permissions" id="67ef486c-0bab-4f31-ab63-1aa7987e1367" />
+              <VariableGroup name="Inputs" id="735e33f0-9afd-4532-a7be-c87fa6c374e0" />
+              <VariableGroup name="Internal" id="578afbc4-3444-4e42-8cca-9beee3f6a130" />
+            </PouData>
+          </Data>
+        </AddData>
+        <Parameters>
+          <InoutVars>
+            <Variable name="Breaker" orderWithinParamSet="0">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>ce1212f7-9e78-4894-a158-40be8be0d4b9</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'ade9df11-40a7-40ba-b46e-6d54b196f186'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_Breaker</TypeName>
+              </Type>
+            </Variable>
+          </InoutVars>
+          <InputVars>
+            <Variable name="tOpenPulse" orderWithinParamSet="4">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>fc5a07bb-d92d-4751-8582-193db46afb2c</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'3335c6d1-f64e-46ba-a23c-22eda14dead3'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#500MS" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tClosePulse" orderWithinParamSet="5">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>836c9901-9cd2-472b-b219-4a11a3325f6c</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'3335c6d1-f64e-46ba-a23c-22eda14dead3'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#500MS" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tOpenTimeout" orderWithinParamSet="6">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>5f10c2a9-67ba-46d7-bb8d-d9b2919a0ee4</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'3335c6d1-f64e-46ba-a23c-22eda14dead3'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#5S" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tCloseTimeout" orderWithinParamSet="7">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>56159660-dc47-4d53-a86a-074ae7f7517e</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'3335c6d1-f64e-46ba-a23c-22eda14dead3'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#5S" />
+              </InitialValue>
+            </Variable>
+            <Variable name="xEnable" orderWithinParamSet="14">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>16e504cc-d9cd-462a-82a0-fd83f8f60a91</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'735e33f0-9afd-4532-a7be-c87fa6c374e0'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xAUTO_OpenRequest" orderWithinParamSet="15">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>2d1a2fb0-f794-49a4-8922-7856bac9792b</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'735e33f0-9afd-4532-a7be-c87fa6c374e0'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xAUTO_CloseRequest" orderWithinParamSet="16">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>4a47ba5c-c16a-4cbe-939b-e1627f826768</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'735e33f0-9afd-4532-a7be-c87fa6c374e0'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xAUTO_ResetRequest" orderWithinParamSet="17">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>412f004b-8514-4bca-951c-3e1176223843</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'735e33f0-9afd-4532-a7be-c87fa6c374e0'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+          </InputVars>
+        </Parameters>
+        <Vars accessSpecifier="private">
+          <Variable name="BreakerCurrentState">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>16ea5f78-e708-4c11-bad7-da2b8370988f</Id>
+                  <SortOrder>1</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'ade9df11-40a7-40ba-b46e-6d54b196f186'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BreakerState</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="BreakerNextState">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>549f3427-1b9e-44c4-b0d0-f197bd707f88</Id>
+                  <SortOrder>2</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'ade9df11-40a7-40ba-b46e-6d54b196f186'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BreakerState</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xControlAllowed">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>91add4f9-fb9f-49f3-98cf-08d3448a687f</Id>
+                  <SortOrder>3</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'ade9df11-40a7-40ba-b46e-6d54b196f186'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonOpenPulse">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>9545fb39-505e-478f-a986-d5cb9e752f2f</Id>
+                  <SortOrder>8</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'3335c6d1-f64e-46ba-a23c-22eda14dead3'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonClosePulse">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>ba2b3f24-6ce2-4eaa-bdf8-ac86e8210ca3</Id>
+                  <SortOrder>9</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'3335c6d1-f64e-46ba-a23c-22eda14dead3'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonOpenTimeout">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>6335bee2-a3c9-40f7-830d-bf512b5ef0d6</Id>
+                  <SortOrder>10</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'3335c6d1-f64e-46ba-a23c-22eda14dead3'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonCloseTimeout">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>1f11cd46-b189-454c-80f0-e6e2378be3e2</Id>
+                  <SortOrder>11</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'3335c6d1-f64e-46ba-a23c-22eda14dead3'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xCanOpen">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>0de7eb9c-67c3-4294-a16f-b7f7a893b574</Id>
+                  <SortOrder>12</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'67ef486c-0bab-4f31-ab63-1aa7987e1367'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xCanClose">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>78826173-c2f6-40c6-89df-ec3a10d65b8f</Id>
+                  <SortOrder>13</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'67ef486c-0bab-4f31-ab63-1aa7987e1367'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtOpenReq">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>083dd3ba-05c6-4629-bae3-4f47d1d6c264</Id>
+                  <SortOrder>18</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtCloseReq">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>97175aac-58dc-4489-bc46-d381b48eb3b0</Id>
+                  <SortOrder>19</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtReset">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>6b34b3f0-729c-48d7-aadf-735c3dcd68ca</Id>
+                  <SortOrder>20</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xOpenPulseActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>bbaca473-0fd9-41bc-a02c-0ed039f88255</Id>
+                  <SortOrder>21</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xClosePulseActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>75ed31db-9670-4ce6-9fbe-2a3dfc60ff3c</Id>
+                  <SortOrder>22</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xOpenRequestActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>d98eed4a-84f8-4850-bae4-79f9327f4679</Id>
+                  <SortOrder>23</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xCloseRequestActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>ba8d3aee-d80f-4ab2-970b-45984f55c96a</Id>
+                  <SortOrder>24</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xResetRequestActive">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>ed296a0f-00c0-4b16-a176-5a91cefdbe1d</Id>
+                  <SortOrder>25</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xIsOpen">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>1ace5fe2-1ddf-4955-8cbe-e06b0d393680</Id>
+                  <SortOrder>26</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xIsClosed">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>c86b45bd-f349-4f36-8929-1f8353a42217</Id>
+                  <SortOrder>27</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xIsTripped">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>414cddb9-5a41-447a-a8da-d57419d093fc</Id>
+                  <SortOrder>28</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xIsInvalid">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>e0a8c33e-eba0-4091-9ef5-33831410ee63</Id>
+                  <SortOrder>29</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'578afbc4-3444-4e42-8cca-9beee3f6a130'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+        </Vars>
+        <MainBody>
+          <AddData>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Read</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>FSM</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Timers</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Set</Name>
+              </WorksheetData>
+            </Data>
+          </AddData>
+          <BodyContent xsi:type="ST">
+            <ST>{region 'Defaults and Edge Detection'}
+    //Breaker Mode
+    CASE Breaker.Mode OF
+        BreakerMode#MANUAL:
+            xOpenRequestActive  := Breaker.HMI.xOpenRequest;
+            xCloseRequestActive := Breaker.HMI.xCloseRequest;
+            xResetRequestActive := Breaker.HMI.xResetRequest;
+            xControlAllowed     := TRUE;
+    
+        BreakerMode#AUTO:
+            xOpenRequestActive  := xAUTO_OpenRequest;
+            xCloseRequestActive := xAUTO_CloseRequest;
+            xResetRequestActive := xAUTO_ResetRequest;
+            xControlAllowed     := TRUE;
+    
+        BreakerMode#EXTERNAL:
+            xOpenRequestActive  := FALSE;
+            xCloseRequestActive := FALSE;
+            xResetRequestActive := FALSE;
+            xControlAllowed     := FALSE;
+    END_CASE;
+    
+    //Edge Detection
+    rtOpenReq(CLK := xOpenRequestActive);
+    rtCloseReq(CLK := xCloseRequestActive);
+    rtReset(CLK := xResetRequestActive);
+    
+    //Reset Commands
+    IF Breaker.Mode = BreakerMode#MANUAL THEN
+        Breaker.HMI.xOpenRequest    := FALSE;
+        Breaker.HMI.xCloseRequest   := FALSE;
+        Breaker.HMI.xResetRequest   := FALSE;
+    END_IF;
+    
+{endregion}
+
+{region 'Feedback Evaluation'}
+    //Breaker status based on feedback
+    xIsOpen         := Breaker.DI.xOpened AND NOT Breaker.DI.xClosed;
+    xIsClosed       := Breaker.DI.xClosed AND NOT Breaker.DI.xOpened;
+    xIsTripped      := Breaker.DI.xTripped;
+    xIsInvalid      := Breaker.DI.xOpened AND Breaker.DI.xClosed;
+    
+{endregion}
+
+{region 'Permissions'}
+    //External Mode?
+    xControlAllowed := Breaker.Mode &lt;&gt; BreakerMode#EXTERNAL;
+    //Can the Breaker be Opened?
+    xCanOpen :=     xEnable
+                    AND xControlAllowed
+                    AND Breaker.Status.xRemote
+                    AND NOT Breaker.Interlocks.xOpenBlocked
+                    AND NOT xIsInvalid
+                    AND NOT Breaker.Status.xFault;
+    //Can the Breaker be Closed?
+    xCanClose :=    xEnable
+                    AND xControlAllowed
+                    AND Breaker.Status.xRemote
+                    AND NOT Breaker.Interlocks.xCloseBlocked
+                    AND Breaker.DI.xReadyToClose
+                    AND NOT xIsTripped
+                    AND NOT xIsInvalid
+                    AND NOT Breaker.Status.xFault;
+{endregion}
+
+</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>{region 'FSM Setup'}
+    BreakerCurrentState := Breaker.State;
+    BreakerNextState    := BreakerCurrentState;
+{endregion}
+
+{region 'Breaker FSM'}
+    IF NOT xEnable THEN
+        BreakerNextState    := BreakerState#UNKNOWN;
+        xOpenPulseActive    := FALSE;
+        xClosePulseActive   := FALSE;
+    
+    ELSIF xIsInvalid THEN
+        BreakerNextState        := BreakerState#INVALID;
+        xOpenPulseActive        := FALSE;
+        xClosePulseActive       := FALSE;
+        Breaker.Status.xFault   := TRUE;
+        Breaker.Status.xAlarm   := TRUE;
+    
+    ELSIF xIsTripped THEN
+        BreakerNextState        := BreakerState#TRIPPED;
+        xOpenPulseActive        := FALSE;
+        xClosePulseActive       := FALSE;
+        Breaker.Status.xAlarm   := TRUE;
+    
+    ELSE
+        CASE BreakerCurrentState OF
+            BreakerState#UNKNOWN:    // derive OPEN/CLOSED/UNKNOWN            
+            {region 'Unknown Breaker State'}
+                        xOpenPulseActive    := FALSE;
+                        xClosePulseActive   := FALSE;
+                        
+                        //Is the Breaker Open or Closed?
+                        IF xIsOpen THEN
+                            BreakerNextState := BreakerState#OPEN;
+                        ELSIF xIsClosed THEN
+                            BreakerNextState := BreakerState#CLOSED;
+                        ELSE
+                            BreakerNextState := BreakerState#UNKNOWN;
+                        END_IF;
+            {endregion}
+            BreakerState#OPEN:       // close request -&gt; CLOSING           
+            {region 'Open Breaker State'}
+                        xOpenPulseActive := FALSE;
+                        //Is Breaker still Open?
+                        IF NOT xIsOpen THEN
+                            BreakerNextState := BreakerState#UNKNOWN;
+                        //Close the Breaker?
+                        ELSIF rtCloseReq.Q AND xCanClose THEN
+                            BreakerNextState := BreakerState#CLOSING;
+                            xClosePulseActive := TRUE;
+                        END_IF;
+            {endregion}
+            BreakerState#CLOSED:     // open request -&gt; OPENING            
+            {region 'Closed Breaker State'}
+                        xClosePulseActive := FALSE;
+                        //Is Breaker still Closed?
+                        IF NOT xIsClosed THEN
+                            BreakerNextState := BreakerState#UNKNOWN;
+                        //Open The Breaker?
+                        ELSIF rtOpenReq.Q AND xCanOpen THEN
+                            BreakerNextState := BreakerState#OPENING;
+                            xOpenPulseActive := TRUE;
+                        END_IF;
+            {endregion}
+            BreakerState#OPENING:    // open feedback -&gt; OPEN, timeout -&gt; FAULT
+            {region 'Breaker Opening'}
+                        //Did Breaker Open?
+                        IF xIsOpen THEN
+                            BreakerNextState            := BreakerState#OPEN;
+                            xOpenPulseActive            := FALSE;
+                            Breaker.Status.xCmdFailed   := FALSE;
+                        //Breaker didnt Open    
+                        ELSIF tonOpenTimeout.Q THEN
+                            BreakerNextState            := BreakerState#FAULT;
+                            xOpenPulseActive            := FALSE;
+                            Breaker.Status.xCmdFailed   := TRUE;
+                            Breaker.Status.xFault       := TRUE;
+                            Breaker.Status.xAlarm       := TRUE;
+                        END_IF;        
+            {endregion}
+            BreakerState#CLOSING:    // closed feedback -&gt; CLOSED, timeout -&gt; FAULT
+            {region 'Breaker Closing'}
+                        //Did Breaker Close?
+                        IF xIsClosed THEN
+                            BreakerNextState            := BreakerState#CLOSED;
+                            xClosePulseActive           := FALSE;
+                            Breaker.Status.xCmdFailed   := FALSE;
+                        //Breaker Didnt Close
+                        ELSIF tonCloseTimeout.Q THEN
+                            BreakerNextState            := BreakerState#FAULT;
+                            xClosePulseActive           := FALSE;
+                            Breaker.Status.xCmdFailed   := TRUE;
+                            Breaker.Status.xFault       := TRUE;
+                            Breaker.Status.xAlarm       := TRUE;
+                        END_IF;        
+            {endregion}
+            BreakerState#TRIPPED:    // reset after trip clears -&gt; UNKNOWN
+            {region 'Breaker Tripped'}
+                        xOpenPulseActive    := FALSE;
+                        xClosePulseActive   := FALSE;
+                        //Reset Breaker?
+                        IF xResetRequestActive AND NOT xIsTripped THEN
+                            Breaker.Status.xAlarm := FALSE;
+                            BreakerNextState := BreakerState#UNKNOWN;
+                        END_IF;
+            
+            {endregion}
+            BreakerState#FAULT:      // reset -&gt; UNKNOWN
+            {region 'Breaker in Fault'}
+                        xOpenPulseActive    := FALSE;
+                        xClosePulseActive   := FALSE;
+                        //Try to Reset the Internal Fault?
+                        IF rtReset.Q THEN
+                            Breaker.Status.xFault       := FALSE;
+                            Breaker.Status.xAlarm       := FALSE;
+                            Breaker.Status.xCmdFailed   := FALSE;
+                            BreakerNextState            := BreakerState#UNKNOWN;
+                        END_IF;
+            {endregion}
+            BreakerState#INVALID:    // reset after feedback normalizes -&gt; UNKNOWN
+            {region 'Invalid Breaker State'}
+                        xOpenPulseActive    := FALSE;
+                        xClosePulseActive   := FALSE;
+                        //Try to Reset the Internal Fault?
+                        IF xResetRequestActive AND NOT xIsInvalid THEN
+                            Breaker.Status.xFault := FALSE;
+                            Breaker.Status.xAlarm := FALSE;
+                            BreakerNextState := BreakerState#UNKNOWN;
+                        END_IF; 
+            {endregion}
+        END_CASE;
+    END_IF;
+{endregion}</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>  
+{region 'Timer Control'}  
+   tonOpenPulse(
+        IN := xOpenPulseActive,
+        PT := tOpenPulse
+    );
+    tonClosePulse(
+        IN := xClosePulseActive,
+        PT := tClosePulse
+    );
+    tonOpenTimeout(
+        IN := BreakerNextState = BreakerState#OPENING,
+        PT := tOpenTimeout
+    );
+    tonCloseTimeout(
+        IN := BreakerNextState = BreakerState#CLOSING,
+        PT := tCloseTimeout
+    );
+{endregion}  
+
+{region 'Pulse Control'}
+    IF tonOpenPulse.Q OR Breaker.Interlocks.xOpenBlocked OR NOT xControlAllowed THEN
+        xOpenPulseActive := FALSE;
+    END_IF;
+    
+    IF tonClosePulse.Q OR Breaker.Interlocks.xCloseBlocked OR NOT xControlAllowed THEN
+        xClosePulseActive := FALSE;
+    END_IF;
+{endregion}  
+             </ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>  
+{region 'Set State Variables'}
+    Breaker.State                   :=  BreakerNextState;
+    CASE Breaker.State OF
+        BreakerState#UNKNOWN:    Breaker.iState := 0;
+        BreakerState#OPEN:       Breaker.iState := 1;
+        BreakerState#CLOSED:     Breaker.iState := 2;
+        BreakerState#TRIPPED:    Breaker.iState := 3;
+        BreakerState#OPENING:    Breaker.iState := 4;
+        BreakerState#CLOSING:    Breaker.iState := 5;
+        BreakerState#FAULT:      Breaker.iState := 6;
+        BreakerState#INVALID:    Breaker.iState := 7;
+    ELSE
+        Breaker.iState := 0;
+    END_CASE;
+    CASE Breaker.Mode OF
+        BreakerMode#MANUAL:     Breaker.iMode := 0;
+        BreakerMode#AUTO:       Breaker.iMode := 1;
+        BreakerMode#EXTERNAL:   Breaker.iMode := 2;
+    ELSE
+        Breaker.iMode := 0;
+    END_CASE;
+{endregion} 
+
+{region 'Set Commands'}
+    Breaker.DQ.xcmd_Open            :=  xOpenPulseActive AND NOT tonOpenPulse.Q;
+    Breaker.DQ.xcmd_Close           :=  xClosePulseActive AND NOT tonClosePulse.Q;
+{endregion}    
+
+{region 'Set Statuses'}
+    Breaker.Status.xInvalidState    :=  xIsInvalid;
+    Breaker.Status.xCmdBusy         :=  (BreakerNextState  = BreakerState#OPENING) OR (BreakerNextState  = BreakerState#CLOSING);
+    Breaker.Status.xAvailable       :=  xCanOpen OR xCanClose;
+{endregion}    
+    </ST>
+          </BodyContent>
+        </MainBody>
+      </FunctionBlock>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>
