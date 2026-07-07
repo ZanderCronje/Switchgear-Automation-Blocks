@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="DHMBG_SwitchGear" version="1.0" creationDateTime="2026-06-24T07:57:19" modificationDateTime="2026-06-29T16:33:24">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <DataTypeDecl name="udt_Breaker">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Breaker</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="sName">
+            <Documentation xsi:type="SimpleText">Breaker Name</Documentation>
+            <Type>
+              <TypeName>STRING[20]</TypeName>
+            </Type>
+          </Member>
+          <Member name="Mode">
+            <Documentation xsi:type="SimpleText">Breaker Mode</Documentation>
+            <Type>
+              <TypeName>BreakerMode</TypeName>
+            </Type>
+          </Member>
+          <Member name="iMode">
+            <Documentation xsi:type="SimpleText">Integer Representaion of State</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="State">
+            <Documentation xsi:type="SimpleText">Breaker FunctionBlock States</Documentation>
+            <Type>
+              <TypeName>BreakerState</TypeName>
+            </Type>
+          </Member>
+          <Member name="iState">
+            <Documentation xsi:type="SimpleText">Integer Representaion of State</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="Status">
+            <Documentation xsi:type="SimpleText">Breaker Status Signals</Documentation>
+            <Type>
+              <TypeName>udt_BreakerStatus</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI">
+            <Documentation xsi:type="SimpleText">Breaker Digital Inputs</Documentation>
+            <Type>
+              <TypeName>udt_BreakerDI</TypeName>
+            </Type>
+          </Member>
+          <Member name="DQ">
+            <Documentation xsi:type="SimpleText">Breaker Digital Outputs</Documentation>
+            <Type>
+              <TypeName>udt_BreakerDQ</TypeName>
+            </Type>
+          </Member>
+          <Member name="Interlocks">
+            <Documentation xsi:type="SimpleText">Breaker Safety Interlocks </Documentation>
+            <Type>
+              <TypeName>udt_Interlocks</TypeName>
+            </Type>
+          </Member>
+          <Member name="HMI">
+            <Documentation xsi:type="SimpleText">HMI Requests</Documentation>
+            <Type>
+              <TypeName>udt_BreakerHMI</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="BreakerMode">
+        <Documentation xsi:type="SimpleText">Breaker Mode</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Breaker</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="MANUAL" value="">
+            <Documentation xsi:type="SimpleText"> iMode = 0</Documentation>
+          </Enumerator>
+          <Enumerator name="AUTO" value="">
+            <Documentation xsi:type="SimpleText"> iMode = 1</Documentation>
+          </Enumerator>
+          <Enumerator name="EXTERNAL" value="">
+            <Documentation xsi:type="SimpleText"> iMode = 2   </Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_BreakerDI">
+        <Documentation xsi:type="SimpleText">Breaker I/O</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Breaker</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xOpened">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xClosed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xReadyToClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_BreakerDQ">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Breaker</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xcmd_Open">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xcmd_Close">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_BreakerStatus">
+        <Documentation xsi:type="SimpleText">Breaker Statuses</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Breaker</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xAvailable">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRemote">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xAlarm">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xInvalidState">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCmdBusy">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCmdFailed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_Interlocks">
+        <Documentation xsi:type="SimpleText">Saftey Interlocks</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Breaker</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xOpenBlocked">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCloseBlocked">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_BreakerHMI">
+        <Documentation xsi:type="SimpleText">HMI Requests</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Breaker</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xOpenRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCloseRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xResetRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="BreakerState">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Breaker</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="UNKNOWN" value="">
+            <Documentation xsi:type="SimpleText">iState = 0</Documentation>
+          </Enumerator>
+          <Enumerator name="OPEN" value="">
+            <Documentation xsi:type="SimpleText">iState = 1</Documentation>
+          </Enumerator>
+          <Enumerator name="CLOSED" value="">
+            <Documentation xsi:type="SimpleText">iState = 2</Documentation>
+          </Enumerator>
+          <Enumerator name="TRIPPED" value="">
+            <Documentation xsi:type="SimpleText">iState = 3</Documentation>
+          </Enumerator>
+          <Enumerator name="OPENING" value="">
+            <Documentation xsi:type="SimpleText">iState = 4</Documentation>
+          </Enumerator>
+          <Enumerator name="CLOSING" value="">
+            <Documentation xsi:type="SimpleText">iState = 5</Documentation>
+          </Enumerator>
+          <Enumerator name="FAULT" value="">
+            <Documentation xsi:type="SimpleText">iState = 6</Documentation>
+          </Enumerator>
+          <Enumerator name="INVALID" value="">
+            <Documentation xsi:type="SimpleText">iState = 7</Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>

@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="DHMBG_SwitchGear" version="1.0" creationDateTime="2026-06-24T07:57:19" modificationDateTime="2026-06-29T16:33:24">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <DataTypeDecl name="udt_Generator">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="sName">
+            <Documentation xsi:type="SimpleText"> Generator Name</Documentation>
+            <Type>
+              <TypeName>STRING[20]</TypeName>
+            </Type>
+          </Member>
+          <Member name="Mode">
+            <Documentation xsi:type="SimpleText"> Generator Mode</Documentation>
+            <Type>
+              <TypeName>GeneratorMode</TypeName>
+            </Type>
+          </Member>
+          <Member name="iMode">
+            <Documentation xsi:type="SimpleText"> Integer Representation of Generator Mode</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="State">
+            <Documentation xsi:type="SimpleText"> Generator State</Documentation>
+            <Type>
+              <TypeName>GeneratorState</TypeName>
+            </Type>
+          </Member>
+          <Member name="iState">
+            <Documentation xsi:type="SimpleText"> Integer Representation of Generator State</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="Status">
+            <Documentation xsi:type="SimpleText"> Generator Statuses</Documentation>
+            <Type>
+              <TypeName>udt_GeneratorStatus</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI">
+            <Documentation xsi:type="SimpleText"> Digital Inputs</Documentation>
+            <Type>
+              <TypeName>udt_GeneratorDI</TypeName>
+            </Type>
+          </Member>
+          <Member name="DQ">
+            <Documentation xsi:type="SimpleText"> Digital Outputs</Documentation>
+            <Type>
+              <TypeName>udt_GeneratorDQ</TypeName>
+            </Type>
+          </Member>
+          <Member name="Measurements">
+            <Documentation xsi:type="SimpleText"> Measured Generator Values</Documentation>
+            <Type>
+              <TypeName>udt_GeneratorMeasurements</TypeName>
+            </Type>
+          </Member>
+          <Member name="Interlocks">
+            <Documentation xsi:type="SimpleText"> Safety Interlocks</Documentation>
+            <Type>
+              <TypeName>udt_GeneratorInterlocks</TypeName>
+            </Type>
+          </Member>
+          <Member name="HMI">
+            <Documentation xsi:type="SimpleText"> HMI Requests</Documentation>
+            <Type>
+              <TypeName>udt_GeneratorHMI</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_GeneratorDI">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xControllerAvailable">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xReadyAndRunning">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xBreakerOpened">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xBreakerClosed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xBreakerCmdFailed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_GeneratorDQ">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xcmd_Start">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xcmd_Stop">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xcmd_Reset">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xAutoStartInhibit">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xLoadInhibit">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_GeneratorStatus">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xAvailable">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRunning">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xReadyToLoad">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRemote">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xAlarm">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCmdBusy">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCmdFailed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xStartFailed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xStopFailed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_GeneratorInterlocks">
+        <Documentation xsi:type="SimpleText">Generator Interlocks</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xStartBlocked">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xStopBlocked">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xLoadBlocked">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xAutoStartBlocked">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_GeneratorMeasurements">
+        <Documentation xsi:type="SimpleText">Generator Measurements</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="rVoltageLL">
+            <Type>
+              <TypeName>REAL</TypeName>
+            </Type>
+          </Member>
+          <Member name="rFrequency">
+            <Type>
+              <TypeName>REAL</TypeName>
+            </Type>
+          </Member>
+          <Member name="rCurrent">
+            <Type>
+              <TypeName>REAL</TypeName>
+            </Type>
+          </Member>
+          <Member name="rPower_kW">
+            <Type>
+              <TypeName>REAL</TypeName>
+            </Type>
+          </Member>
+          <Member name="rReactivePower_kVAr">
+            <Type>
+              <TypeName>REAL</TypeName>
+            </Type>
+          </Member>
+          <Member name="rPowerFactor">
+            <Type>
+              <TypeName>REAL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_GeneratorHMI">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xStartRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xStopRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xResetRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="GeneratorMode">
+        <Documentation xsi:type="SimpleText">Generator Modes</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="MANUAL" value="">
+            <Documentation xsi:type="SimpleText"> iMode = 0</Documentation>
+          </Enumerator>
+          <Enumerator name="AUTO" value="">
+            <Documentation xsi:type="SimpleText"> iMode = 1</Documentation>
+          </Enumerator>
+          <Enumerator name="EXTERNAL" value="">
+            <Documentation xsi:type="SimpleText"> iMode = 2</Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="GeneratorState">
+        <Documentation xsi:type="SimpleText">Generator FSM states</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_Generator</Name>
+              <Folder>UDTs</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="UNKNOWN" value="">
+            <Documentation xsi:type="SimpleText"> iState = 0</Documentation>
+          </Enumerator>
+          <Enumerator name="STOPPED" value="">
+            <Documentation xsi:type="SimpleText"> iState = 1</Documentation>
+          </Enumerator>
+          <Enumerator name="STOPPING" value="">
+            <Documentation xsi:type="SimpleText"> iState = 2</Documentation>
+          </Enumerator>
+          <Enumerator name="STARTING" value="">
+            <Documentation xsi:type="SimpleText"> iState = 3</Documentation>
+          </Enumerator>
+          <Enumerator name="RUNNING" value="">
+            <Documentation xsi:type="SimpleText"> iState = 4</Documentation>
+          </Enumerator>
+          <Enumerator name="RUNNING_LOAD" value="">
+            <Documentation xsi:type="SimpleText"> iState = 5</Documentation>
+          </Enumerator>
+          <Enumerator name="FAULT" value="">
+            <Documentation xsi:type="SimpleText"> iState = 6</Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>
