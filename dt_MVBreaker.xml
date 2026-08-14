@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="3152_SubstationPLC" version="1.0" creationDateTime="2026-08-12T13:42:23" modificationDateTime="2026-08-14T12:26:39">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <DataTypeDecl name="udt_MVBreaker">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="sName">
+            <Documentation xsi:type="SimpleText"> MVBreaker Name</Documentation>
+            <Type>
+              <TypeName>STRING[20]</TypeName>
+            </Type>
+          </Member>
+          <Member name="sDescription">
+            <Documentation xsi:type="SimpleText"> MV breaker description</Documentation>
+            <Type>
+              <TypeName>STRING[50]</TypeName>
+            </Type>
+          </Member>
+          <Member name="OperatingMode">
+            <Documentation xsi:type="SimpleText"> MVBreaker Operating mode</Documentation>
+            <Type>
+              <TypeName>MVBreakerMode</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiOperatingMode">
+            <Documentation xsi:type="SimpleText"> Integer Representaion of Operating mode</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="State">
+            <Documentation xsi:type="SimpleText"> MVBreaker FunctionBlock States</Documentation>
+            <Type>
+              <TypeName>MVBreakerState</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiState">
+            <Documentation xsi:type="SimpleText"> Integer Representaion of State</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="Status">
+            <Documentation xsi:type="SimpleText"> MVBreaker Status Signals</Documentation>
+            <Type>
+              <TypeName>udt_MVBreakerStatus</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI">
+            <Documentation xsi:type="SimpleText"> MVBreaker Digital Inputs</Documentation>
+            <Type>
+              <TypeName>udt_MVBreakerDI</TypeName>
+            </Type>
+          </Member>
+          <Member name="DQ">
+            <Documentation xsi:type="SimpleText"> MVBreaker Digital Outputs</Documentation>
+            <Type>
+              <TypeName>udt_MVBreakerDQ</TypeName>
+            </Type>
+          </Member>
+          <Member name="Interlocks">
+            <Documentation xsi:type="SimpleText"> External control permissives </Documentation>
+            <Type>
+              <TypeName>udt_MVBreakerInterlocks</TypeName>
+            </Type>
+          </Member>
+          <Member name="Alarms">
+            <Documentation xsi:type="SimpleText"> MVBreaker alarm signals</Documentation>
+            <Type>
+              <TypeName>udt_MVBreakerAlarms</TypeName>
+            </Type>
+          </Member>
+          <Member name="Faults">
+            <Documentation xsi:type="SimpleText"> MVBreaker fault signals</Documentation>
+            <Type>
+              <TypeName>udt_MVBreakerFaults</TypeName>
+            </Type>
+          </Member>
+          <Member name="HMI">
+            <Documentation xsi:type="SimpleText"> HMI Requests</Documentation>
+            <Type>
+              <TypeName>udt_MVBreakerHMI</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiControlOwner">
+            <Documentation xsi:type="SimpleText"> Control Authority Interger representation</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="MVBreakerMode">
+        <Documentation xsi:type="SimpleText">MVBreaker Opperating Mode</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="INVALID" value="0">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 0   </Documentation>
+          </Enumerator>
+          <Enumerator name="AUTO" value="1">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 1      --  DSE8660 </Documentation>
+          </Enumerator>
+          <Enumerator name="MANUAL" value="2">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 2      --  PLC</Documentation>
+          </Enumerator>
+          <Enumerator name="TEST" value="3">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 3      --  PLC</Documentation>
+          </Enumerator>
+          <Enumerator name="MAINTENANCE" value="4">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 4      --  Local</Documentation>
+          </Enumerator>
+          <Enumerator name="DISABLED" value="5">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 5</Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="MVBreakerState">
+        <Documentation xsi:type="SimpleText">MVBreaker FSM State</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="UNKNOWN" value="0">
+            <Documentation xsi:type="SimpleText">uiState = 0</Documentation>
+          </Enumerator>
+          <Enumerator name="OPEN" value="1">
+            <Documentation xsi:type="SimpleText">uiState = 1</Documentation>
+          </Enumerator>
+          <Enumerator name="CLOSED" value="2">
+            <Documentation xsi:type="SimpleText">uiState = 2</Documentation>
+          </Enumerator>
+          <Enumerator name="TRIPPED" value="3">
+            <Documentation xsi:type="SimpleText">uiState = 3</Documentation>
+          </Enumerator>
+          <Enumerator name="OPENING" value="4">
+            <Documentation xsi:type="SimpleText">uiState = 4</Documentation>
+          </Enumerator>
+          <Enumerator name="CLOSING" value="5">
+            <Documentation xsi:type="SimpleText">uiState = 5</Documentation>
+          </Enumerator>
+          <Enumerator name="RETRY_WAIT" value="6">
+            <Documentation xsi:type="SimpleText">uiState = 6</Documentation>
+          </Enumerator>
+          <Enumerator name="FAULT" value="7">
+            <Documentation xsi:type="SimpleText">uiState = 7</Documentation>
+          </Enumerator>
+          <Enumerator name="INVALID" value="8">
+            <Documentation xsi:type="SimpleText">uiState = 8</Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_MVBreakerDI">
+        <Documentation xsi:type="SimpleText">MVBreaker DI</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xOpened">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xClosed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xSpringCharged">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xEarthed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xIsolatorOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xMaintenance">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xMotorSupplyTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xOpenCoilSupplyTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCloseCoilSupplyTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xProtectionHealthy">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xProtectionCommonAlarm">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_MVBreakerDQ">
+        <Documentation xsi:type="SimpleText">MVBreaker DQ</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xCmdOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCmdClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_MVBreakerStatus">
+        <Documentation xsi:type="SimpleText">MVBreaker Status</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xPLCControlAuthority">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xAutoControlActive">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xClosed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xReadyToClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCanOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCanClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCommandBusy">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRetryPending">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiRetriesUsed">
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_MVBreakerAlarms">
+        <Documentation xsi:type="SimpleText">MVBreaker Alarms</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xFailToOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xFailToClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xAlarm">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_MVBreakerFaults">
+        <Documentation xsi:type="SimpleText">MVBreaker Faults</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xFeedbackFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xEarthedWhileClosed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xIsolatorOpenWhileClosed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xControlSupplyFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xProtectionFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_MVBreakerInterlocks">
+        <Documentation xsi:type="SimpleText">MVBreaker Interlocks</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xExternalClosePermit">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xExternalOpenPermit">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_MVBreakerHMI">
+        <Documentation xsi:type="SimpleText">HMI Requests</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_MVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xHMIOpenRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xHMICloseRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xHMIResetRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xHMIAlarmAcknowledge">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>

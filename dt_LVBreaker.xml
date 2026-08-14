@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="3152_SubstationPLC" version="1.0" creationDateTime="2026-08-12T13:42:23" modificationDateTime="2026-08-14T12:26:39">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <DataTypeDecl name="udt_LVBreaker">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="sName">
+            <Documentation xsi:type="SimpleText"> LVBreaker Name</Documentation>
+            <Type>
+              <TypeName>STRING[20]</TypeName>
+            </Type>
+          </Member>
+          <Member name="sDescription">
+            <Documentation xsi:type="SimpleText"> LVBreaker Desription</Documentation>
+            <Type>
+              <TypeName>STRING[50]</TypeName>
+            </Type>
+          </Member>
+          <Member name="OperatingMode">
+            <Documentation xsi:type="SimpleText"> LVBreaker Operating mode</Documentation>
+            <Type>
+              <TypeName>LVBreakerMode</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiOperatingMode">
+            <Documentation xsi:type="SimpleText"> Integer Representaion of Operating mode</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="State">
+            <Documentation xsi:type="SimpleText"> LVBreaker FunctionBlock States</Documentation>
+            <Type>
+              <TypeName>LVBreakerState</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiState">
+            <Documentation xsi:type="SimpleText"> Integer Representaion of State</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="RackPosition">
+            <Documentation xsi:type="SimpleText"> LVBreaker Rack Position</Documentation>
+            <Type>
+              <TypeName>LVBreakerRackPosition</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiRackPosition">
+            <Documentation xsi:type="SimpleText"> Integer Representaion of Rack Position</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="Status">
+            <Documentation xsi:type="SimpleText"> Breaker Statuses</Documentation>
+            <Type>
+              <TypeName>udt_LVBreakerStatus</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI">
+            <Documentation xsi:type="SimpleText"> MVBreaker Digital Inputs</Documentation>
+            <Type>
+              <TypeName>udt_LVBreakerDI</TypeName>
+            </Type>
+          </Member>
+          <Member name="DQ">
+            <Documentation xsi:type="SimpleText"> MVBreaker Digital Outputs</Documentation>
+            <Type>
+              <TypeName>udt_LVBreakerDQ</TypeName>
+            </Type>
+          </Member>
+          <Member name="Interlocks">
+            <Documentation xsi:type="SimpleText"> External control permissives </Documentation>
+            <Type>
+              <TypeName>udt_LVBreakerInterlocks</TypeName>
+            </Type>
+          </Member>
+          <Member name="Alarms">
+            <Documentation xsi:type="SimpleText"> MVBreaker alarm signals</Documentation>
+            <Type>
+              <TypeName>udt_LVBreakerAlarms</TypeName>
+            </Type>
+          </Member>
+          <Member name="Faults">
+            <Documentation xsi:type="SimpleText"> MVBreaker fault signals</Documentation>
+            <Type>
+              <TypeName>udt_LVBreakerFaults</TypeName>
+            </Type>
+          </Member>
+          <Member name="HMI">
+            <Documentation xsi:type="SimpleText"> HMI Requests</Documentation>
+            <Type>
+              <TypeName>udt_LVBreakerHMI</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiControlOwner">
+            <Documentation xsi:type="SimpleText"> Control Authority Interger representation</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="LVBreakerMode">
+        <Documentation xsi:type="SimpleText">LVBreaker Opperating Mode</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="INVALID" value="0">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 0   </Documentation>
+          </Enumerator>
+          <Enumerator name="AUTO" value="1">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 1      --  DSE8660 &amp; DSE8610</Documentation>
+          </Enumerator>
+          <Enumerator name="MANUAL" value="2">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 2      --  PLC</Documentation>
+          </Enumerator>
+          <Enumerator name="TEST" value="3">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 3      --  PLC</Documentation>
+          </Enumerator>
+          <Enumerator name="MAINTENANCE" value="4">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 4      --  Local</Documentation>
+          </Enumerator>
+          <Enumerator name="DISABLED" value="5">
+            <Documentation xsi:type="SimpleText"> uiOperatingMode = 5</Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="LVBreakerState">
+        <Documentation xsi:type="SimpleText">LVBreaker FSM State</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="UNKNOWN" value="0">
+            <Documentation xsi:type="SimpleText">uiState = 0</Documentation>
+          </Enumerator>
+          <Enumerator name="OPEN" value="1">
+            <Documentation xsi:type="SimpleText">uiState = 1</Documentation>
+          </Enumerator>
+          <Enumerator name="CLOSED" value="2">
+            <Documentation xsi:type="SimpleText">uiState = 2</Documentation>
+          </Enumerator>
+          <Enumerator name="TRIPPED" value="3">
+            <Documentation xsi:type="SimpleText">uiState = 3</Documentation>
+          </Enumerator>
+          <Enumerator name="OPENING" value="4">
+            <Documentation xsi:type="SimpleText">uiState = 4</Documentation>
+          </Enumerator>
+          <Enumerator name="CLOSING" value="5">
+            <Documentation xsi:type="SimpleText">uiState = 5</Documentation>
+          </Enumerator>
+          <Enumerator name="RETRY_WAIT" value="6">
+            <Documentation xsi:type="SimpleText">uiState = 6</Documentation>
+          </Enumerator>
+          <Enumerator name="FAULT" value="7">
+            <Documentation xsi:type="SimpleText">uiState = 7</Documentation>
+          </Enumerator>
+          <Enumerator name="INVALID" value="8">
+            <Documentation xsi:type="SimpleText">uiState = 8</Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="LVBreakerRackPosition">
+        <Documentation xsi:type="SimpleText">LVBreaker Rack Position</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+          <Enumerator name="UNKNOWN" value="0">
+            <Documentation xsi:type="SimpleText">uiRackPosition = 0     </Documentation>
+          </Enumerator>
+          <Enumerator name="RACKED_IN" value="1">
+            <Documentation xsi:type="SimpleText">uiRackPosition = 1</Documentation>
+          </Enumerator>
+          <Enumerator name="TEST" value="2">
+            <Documentation xsi:type="SimpleText">uiRackPosition = 2</Documentation>
+          </Enumerator>
+          <Enumerator name="RACKED_OUT" value="3">
+            <Documentation xsi:type="SimpleText">uiRackPosition = 3</Documentation>
+          </Enumerator>
+          <Enumerator name="INVALID" value="4">
+            <Documentation xsi:type="SimpleText">uiRackPosition = 4</Documentation>
+          </Enumerator>
+          <BaseType>UINT</BaseType>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_LVBreakerDI">
+        <Documentation xsi:type="SimpleText">LVBreaker DI</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xOpenFeedback">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCloseFeedback">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xTrippedFeedback">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xFieldReadyToClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRackedIN">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRackedOUT">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xTestPosition">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xMainControlSupplyTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xMotorSupplyTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xOpenCoilSupplyTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCloseCoilSupplyTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xMaintenance">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xG_Rdy">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xG_F">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_LVBreakerDQ">
+        <Documentation xsi:type="SimpleText">LVBreaker DQ</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xCmdOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCmdClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xInhibitLoad">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xInhibitAutoStart">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xManualMode">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xManualTransfer">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_LVBreakerStatus">
+        <Documentation xsi:type="SimpleText">LVBreaker Status</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xPLCControlAuthority">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xAutoControlActive">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xClosed">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xTripped">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xReadyToClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCanOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCanClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xCommandBusy">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRetryPending">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiRetriesUsed">
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_LVBreakerAlarms">
+        <Documentation xsi:type="SimpleText">LVBreaker Alarms</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xFailToOpen">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xFailToClose">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xAlarm">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_LVBreakerFaults">
+        <Documentation xsi:type="SimpleText">LVBreaker Faults</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xFeedbackFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRackPositionFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xControlSupplyFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xFault">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_LVBreakerInterlocks">
+        <Documentation xsi:type="SimpleText">LVBreaker Interlocks</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xExternalClosePermit">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xExternalOpenPermit">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_LVBreakerHMI">
+        <Documentation xsi:type="SimpleText">HMI Requests</Documentation>
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_LVBreaker</Name>
+              <Folder>Equipment</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="xHMIOpenRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xHMICloseRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xHMIResetRequest">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xHMIAlarmAcknowledge">
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>

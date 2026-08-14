@@ -1,0 +1,1650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="3152_SubstationPLC" version="1.0" creationDateTime="2026-08-12T13:42:23" modificationDateTime="2026-08-14T12:26:39">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <FunctionBlock name="fb_LVBreaker">
+        <AddData>
+          <Data name="pouData" handleUnknown="preserve">
+            <PouData>
+              <Folder>Equipment</Folder>
+              <ContentNode name="Metadata.meta" nodeType="MetadataDocument" displayName="Metadata">
+                <Xml xmlns="">
+                  <Metadata>
+                    <FolderType>PouFolder</FolderType>
+                    <ContentType>FunctionBlock</ContentType>
+                    <Kind>FunctionBlock</Kind>
+                    <Usings></Usings>
+                    <Id>0473f4b2-7596-4d3f-ae93-5fd54f78bb0b</Id>
+                    <ItemGroup>
+                      <VariableWorksheet>
+                        <Id>5a939afc-f948-4a1d-89d1-3c7c84925a75</Id>
+                      </VariableWorksheet>
+                      <CodeWorksheet Include="Defaults.st">
+                        <Id>3b1ba10d-6e06-4f25-9dc3-3eddb47099b6</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>0</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="Timers.st">
+                        <Id>960acb56-fe7a-4a6e-b05c-3386b2aa1b7e</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>1</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="ProcessInputs.st">
+                        <Id>8c59fbdf-b578-428e-900b-976ca44cd022</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>2</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="FSM.st">
+                        <Id>ba9bd5e4-506d-400c-bba1-688282be4cb7</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>3</ParentIndex>
+                      </CodeWorksheet>
+                      <CodeWorksheet Include="SetOutputs.st">
+                        <Id>8fb9b331-1d20-44d4-bbd8-88ea3988eb84</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>4</ParentIndex>
+                      </CodeWorksheet>
+                    </ItemGroup>
+                  </Metadata>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="VersionHistory.usermeta" nodeType="UserMetadata" displayName="Description">
+                <Xml xmlns="">
+                  <UserMetadataDoc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <UserMetadata Id="1be191c1-76d1-44d4-a578-3f9a61ddabac" xmlns="">
+                      <dcec>
+                        <dc:identifier></dc:identifier>
+                        <dc:title></dc:title>
+                      </dcec>
+                      <revTable />
+                      <DescriptionCollection>
+                        <Description relativePath=".\Description.html" format="HTML" />
+                        <Description relativePath=".\Description.rtf" format="RTF" />
+                      </DescriptionCollection>
+                    </UserMetadata>
+                  </UserMetadataDoc>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="Description.html" nodeType="UserMetadataDescription" displayName="Description.html" />
+              <ContentNode name="Resources.locreslst" nodeType="LocalResourcesListDocument" displayName="Resources" />
+              <ContentNode name="Variables.var.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="User.locres" nodeType="LocalResources" displayName="Resources">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <IsUser>true</IsUser>
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <VariableGroup name="LV Breaker" id="5e7d58f1-801f-45d0-94eb-cddeae7d9143" />
+              <VariableGroup name="States, Modes &amp; Positions" id="44954222-9aba-4d5c-830f-61a5c814280f" />
+              <VariableGroup name="Inputs" id="b2255b5b-bff5-4b01-b1d5-61473ea82171" />
+              <VariableGroup name="Timers" id="240ceeb5-c26e-4cc6-9724-99c126d55cbe" />
+              <VariableGroup name="Rising-Edge Detection" id="94eb15e9-9118-43f4-ae9b-e03c37664ebf" />
+              <VariableGroup name="Internal Variables" id="721567f4-e987-4865-bfa6-bdf0f59bf525" />
+            </PouData>
+          </Data>
+        </AddData>
+        <Parameters>
+          <InoutVars>
+            <Variable name="LVBreaker" orderWithinParamSet="0">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>ab607987-d66b-47b6-b2fc-f169c75fa3d9</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'5e7d58f1-801f-45d0-94eb-cddeae7d9143'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_LVBreaker</TypeName>
+              </Type>
+            </Variable>
+          </InoutVars>
+          <InputVars>
+            <Variable name="xEnable" orderWithinParamSet="1">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>52de4718-42d4-4102-9e7b-5fd9367584c9</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'5e7d58f1-801f-45d0-94eb-cddeae7d9143'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="uiModeRequest" orderWithinParamSet="3">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>3a1f03b7-f56f-47e4-afc3-a55316eda00f</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'44954222-9aba-4d5c-830f-61a5c814280f'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>UINT</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xPLCControlAuthority" orderWithinParamSet="8">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>3b61d4fb-40cf-4dc5-b185-d9de767d52a9</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xAutoOpenRequest" orderWithinParamSet="9">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>9008b696-fe09-408e-ac77-c7c98765ebb2</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="xAutoCloseRequest" orderWithinParamSet="10">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>7841d0cf-3bd8-4d6e-a8a5-df0d285fedb9</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+            <Variable name="tFeedbackDebounce" orderWithinParamSet="11">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>23912e89-9dd3-4e79-b2cb-87246b782834</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#100ms" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tOpenPulse" orderWithinParamSet="12">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>c74e0f04-0f02-479f-88f5-9246db6fedb8</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#1s" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tClosePulse" orderWithinParamSet="13">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>f094586e-10de-4195-9841-bd32de4fe9ae</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#1s" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tOpenTimeout" orderWithinParamSet="14">
+              <Documentation xsi:type="SimpleText">&gt; tOpenPulse</Documentation>
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>e1e7fe62-a719-45f4-94e1-3dba21655272</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#5s" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tCloseTimeout" orderWithinParamSet="15">
+              <Documentation xsi:type="SimpleText">&gt; tClosePulse</Documentation>
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>235ebde4-9fad-49b5-a295-08de3a4b793f</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#5s" />
+              </InitialValue>
+            </Variable>
+            <Variable name="tFeedbackFaultDelay" orderWithinParamSet="16">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>f9a7b2f5-286f-4f74-934b-0ceafe7d92d3</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>TIME</TypeName>
+              </Type>
+              <InitialValue>
+                <SimpleValue value="TIME#5s" />
+              </InitialValue>
+            </Variable>
+            <Variable name="uiMaxRetries" orderWithinParamSet="17">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>d287345a-2ebf-46e9-911e-3249c3e8392f</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'b2255b5b-bff5-4b01-b1d5-61473ea82171'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>UINT</TypeName>
+              </Type>
+            </Variable>
+          </InputVars>
+        </Parameters>
+        <Vars accessSpecifier="private">
+          <Variable name="eOperatingMode">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>43ba8eec-2ef4-43c8-bb05-8a178b38335e</Id>
+                  <SortOrder>2</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'44954222-9aba-4d5c-830f-61a5c814280f'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>LVBreakerMode</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="eCurrentState">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>a94e63d6-b42e-45be-b45b-c3f1c2b622ab</Id>
+                  <SortOrder>4</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'44954222-9aba-4d5c-830f-61a5c814280f'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>LVBreakerState</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="eNextState">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>d08c6b83-3180-42fc-b72d-b1d2a5b315f8</Id>
+                  <SortOrder>5</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'44954222-9aba-4d5c-830f-61a5c814280f'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>LVBreakerState</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="eRackPosition">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>c48adbd4-2830-488e-aec3-f2f2e7bbeaca</Id>
+                  <SortOrder>6</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'44954222-9aba-4d5c-830f-61a5c814280f'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>LVBreakerRackPosition</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="eRetryTargetState">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>6adc32b8-a057-41c4-b3cb-0c5f31faba35</Id>
+                  <SortOrder>7</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'44954222-9aba-4d5c-830f-61a5c814280f'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>LVBreakerState</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonOpenFeedbackDebounce">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>ea1e9ffc-8232-40a8-90b6-2e07c2356c81</Id>
+                  <SortOrder>18</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonCloseFeedbackDebounce">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>dc810fd2-a611-429a-8c1a-7a6fdced6a6b</Id>
+                  <SortOrder>19</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonRackedInDebounce">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>69569c54-01ea-44c1-906d-db472de44ba0</Id>
+                  <SortOrder>20</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonRackedOutDebounce">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>37471cd3-4e9a-42ad-a6cd-ad177ab91db3</Id>
+                  <SortOrder>21</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonTestPositionDebounce">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>7bb3ee49-85f0-4587-b07a-8357f4969262</Id>
+                  <SortOrder>22</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonFieldReadyToClose">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>cb92795a-af10-4b55-8ca6-ca853c4c60c8</Id>
+                  <SortOrder>23</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonOpenPulse">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>40fcdabb-01f1-4495-8f81-8a33965c216d</Id>
+                  <SortOrder>24</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonClosePulse">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>dc48e52e-7cb8-46a4-ba7d-3f927e9ffb00</Id>
+                  <SortOrder>25</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonOpenTimeout">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>90f20c18-3ef7-4ca7-8fbc-93848f4483ff</Id>
+                  <SortOrder>26</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonCloseTimeout">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>427684d3-4363-4809-92ef-8d0de6c13a9d</Id>
+                  <SortOrder>27</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="tonFeedbackFaultDelay">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>04e3eac2-1259-4950-8999-3cb80a7f671b</Id>
+                  <SortOrder>28</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'240ceeb5-c26e-4cc6-9724-99c126d55cbe'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>TON</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtAutoOpenRequest">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>eddc163a-8282-4d69-9d83-616dccd3bd22</Id>
+                  <SortOrder>29</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'94eb15e9-9118-43f4-ae9b-e03c37664ebf'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtAutoCloseRequest">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>591108e8-138e-4ba3-801f-511420953217</Id>
+                  <SortOrder>30</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'94eb15e9-9118-43f4-ae9b-e03c37664ebf'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtHMIOpenRequest">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>1a307811-88ac-4b74-abed-391fa4e7e22b</Id>
+                  <SortOrder>31</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'94eb15e9-9118-43f4-ae9b-e03c37664ebf'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtHMICloseRequest">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>3de24eb4-b354-44e0-9a0a-60b8d785ae49</Id>
+                  <SortOrder>32</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'94eb15e9-9118-43f4-ae9b-e03c37664ebf'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtHMIResetRequest">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>e8ad8797-0ee5-4d84-9767-ce972ad2e8f3</Id>
+                  <SortOrder>33</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'94eb15e9-9118-43f4-ae9b-e03c37664ebf'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="rtHMIAlarmAcknowledge">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>6bfcb35b-80c1-4a54-a363-09418445967c</Id>
+                  <SortOrder>34</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'94eb15e9-9118-43f4-ae9b-e03c37664ebf'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>R_TRIG</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xControlAllowed">
+            <Documentation xsi:type="SimpleText">FB Control via PLC is allowed</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>a75b61da-66bd-4d22-871f-dac0e9536256</Id>
+                  <SortOrder>35</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xOpenFeedbackDebounced">
+            <Documentation xsi:type="SimpleText">Debounced Open Signal</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>4e290538-69ef-486a-816f-0df155af79d4</Id>
+                  <SortOrder>36</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xCloseFeedbackDebounced">
+            <Documentation xsi:type="SimpleText">Debounced Closed Signal</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>08f868af-1fae-416b-af4f-ef1f4587f450</Id>
+                  <SortOrder>37</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xRackedInDebounced">
+            <Documentation xsi:type="SimpleText">Debounced Racked In Signal</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>f07dfd04-0a75-43a4-b7cc-4cc5e22a9be0</Id>
+                  <SortOrder>38</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xRackedOutDebounced">
+            <Documentation xsi:type="SimpleText">Debounced Racked Out Signal</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>610fb443-2f78-473b-8ebf-20abb77ac6cf</Id>
+                  <SortOrder>39</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xTestPositionDebounced">
+            <Documentation xsi:type="SimpleText">Debounced Test Signal</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>7d7d008f-eb5e-4213-a16a-546d12f53a7a</Id>
+                  <SortOrder>40</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xFieldReadyToCloseValid">
+            <Documentation xsi:type="SimpleText">Valid Ready to Close Signal</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>4a33b6b6-c6a7-4fb5-9e28-bf56db600e2e</Id>
+                  <SortOrder>41</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xOpenRequestPulse">
+            <Documentation xsi:type="SimpleText">Active open Request Pulse</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>637292a9-633e-45dc-9669-554003cdfb9a</Id>
+                  <SortOrder>42</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+          <Variable name="xCloseRequestPulse">
+            <Documentation xsi:type="SimpleText">Active Close Request Pulse</Documentation>
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>9347c22c-d715-4a7a-9098-45267fa13be9</Id>
+                  <SortOrder>43</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'721567f4-e987-4865-bfa6-bdf0f59bf525'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Variable>
+        </Vars>
+        <MainBody>
+          <AddData>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Defaults</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Timers</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>ProcessInputs</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>FSM</Name>
+              </WorksheetData>
+            </Data>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>SetOutputs</Name>
+              </WorksheetData>
+            </Data>
+          </AddData>
+          <BodyContent xsi:type="ST">
+            <ST>(*===================================================================================
+        Default Variable Assignments
+=====================================================================================*)
+{region 'State Update'}
+    eCurrentState   := eNextState;   
+{endregion}
+
+{region 'Default Outputs'}
+    LVBreaker.DQ.xCmdOpen          := FALSE;
+    LVBreaker.DQ.xCmdClose         := FALSE;
+{endregion}
+
+{region 'Default Requests'}
+    xOpenRequestPulse   := FALSE;
+    xCloseRequestPulse  := FALSE;
+{endregion}
+
+
+</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>(*===================================================================================
+                                    Timers Control
+=====================================================================================*)
+{region 'Request Edge Detection'}
+(*-----------------------------------------------------------------------------------
+    Each raw request is monitored continuously, irrespective of the selected mode.
+-------------------------------------------------------------------------------------*)
+    rtAutoOpenRequest(
+        CLK := xAutoOpenRequest
+    );
+    rtAutoCloseRequest(
+        CLK := xAutoCloseRequest
+    );
+    rtHMIOpenRequest(
+        CLK := LVBreaker.HMI.xHMIOpenRequest
+    );
+    rtHMICloseRequest(
+        CLK := LVBreaker.HMI.xHMICloseRequest
+    );
+    rtHMIResetRequest(
+        CLK := LVBreaker.HMI.xHMIResetRequest
+    );
+    rtHMIAlarmAcknowledge(
+        CLK := LVBreaker.HMI.xHMIAlarmAcknowledge
+    );
+{endregion}
+
+{region 'Feedback Debounce'}
+(*-------------------------------------------------------------------------------------
+        Start timing whenever the physical input differs from
+        the currently accepted debounced value.
+---------------------------------------------------------------------------------------*)
+    tonOpenFeedbackDebounce(
+        IN := LVBreaker.DI.xOpenFeedback &lt;&gt; xOpenFeedbackDebounced,
+        PT := tFeedbackDebounce
+    );
+    IF tonOpenFeedbackDebounce.Q THEN
+        xOpenFeedbackDebounced := LVBreaker.DI.xOpenFeedback;
+    END_IF;
+
+    tonCloseFeedbackDebounce(
+        IN := LVBreaker.DI.xCloseFeedback &lt;&gt; xCloseFeedbackDebounced,
+        PT := tFeedbackDebounce
+    );
+    IF tonCloseFeedbackDebounce.Q THEN
+        xCloseFeedbackDebounced := LVBreaker.DI.xCloseFeedback;
+    END_IF;
+{endregion}
+
+{region 'Feedback Fault Delay'}
+(*-------------------------------------------------------------------------------------
+    Outside a PLC-controlled transition, exactly one breaker-position feedback
+    must be active. Allow temporary invalid feedback during contact changeover
+    or external breaker movement.
+---------------------------------------------------------------------------------------*)
+    tonFeedbackFaultDelay(
+        IN :=   (xOpenFeedbackDebounced = xCloseFeedbackDebounced)
+                AND (eRackPosition = LVBreakerRackPosition#RACKED_IN
+                     OR eRackPosition = LVBreakerRackPosition#TEST)
+                AND (eCurrentState &lt;&gt; LVBreakerState#OPENING)
+                AND (eCurrentState &lt;&gt; LVBreakerState#CLOSING)
+                AND (eCurrentState &lt;&gt; LVBreakerState#RETRY_WAIT),
+    
+        PT := tFeedbackFaultDelay
+    );
+{endregion}
+
+{region 'Rack Position Debounce'}
+(*-------------------------------------------------------------------------------------
+        Debounce Racked-In, Racked-Out and Test Signals
+---------------------------------------------------------------------------------------*)
+    tonRackedInDebounce(
+        IN := LVBreaker.DI.xRackedIN &lt;&gt; xRackedInDebounced,
+        PT := tFeedbackDebounce
+    );
+    IF tonRackedInDebounce.Q THEN
+        xRackedInDebounced := LVBreaker.DI.xRackedIN;
+    END_IF;
+    
+    tonRackedOutDebounce(
+        IN := LVBreaker.DI.xRackedOUT &lt;&gt; xRackedOutDebounced,
+        PT := tFeedbackDebounce
+    );
+    IF tonRackedOutDebounce.Q THEN
+        xRackedOutDebounced := LVBreaker.DI.xRackedOUT;
+    END_IF;
+    
+    tonTestPositionDebounce(
+        IN := LVBreaker.DI.xTestPosition &lt;&gt; xTestPositionDebounced,
+        PT := tFeedbackDebounce
+    ); 
+    IF tonTestPositionDebounce.Q THEN
+        xTestPositionDebounced := LVBreaker.DI.xTestPosition;
+    END_IF;
+{endregion}
+
+{region 'Ready To Close Validation'}
+(*-------------------------------------------------------------------------------------
+        The field signal must remain true for the debounce period.
+        A false input removes readiness immediately.
+---------------------------------------------------------------------------------------*)
+    tonFieldReadyToClose(
+        IN := LVBreaker.DI.xFieldReadyToClose,
+        PT := tFeedbackDebounce
+    );
+    
+    xFieldReadyToCloseValid := tonFieldReadyToClose.Q;
+{endregion}
+
+{region 'Command Timers'}
+(*-------------------------------------------------------------------------------------
+    A pulse timer runs only while in FSM Transition States.
+    Timeout timers for complete operation.
+---------------------------------------------------------------------------------------*)
+    tonOpenPulse(
+        IN := eCurrentState = LVBreakerState#OPENING,
+        PT := tOpenPulse
+    );
+    tonOpenTimeout(
+        IN := eCurrentState = LVBreakerState#OPENING,
+        PT := tOpenTimeout
+    );
+    tonClosePulse(
+        IN := eCurrentState = LVBreakerState#CLOSING,
+        PT := tClosePulse
+    );
+    tonCloseTimeout(
+        IN := eCurrentState = LVBreakerState#CLOSING,
+        PT := tCloseTimeout
+    );
+{endregion}
+
+
+</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>(*===================================================================================
+                                    Process Inputs
+=====================================================================================*)
+{region 'Operating Mode'}
+(*-----------------------------------------------------------------------------------
+                            OPERATING MODE SELECTION
+                0:  INVALID
+                1:  AUTO
+                2:  MANUAL
+                3:  TEST
+                4:  MAINTENANCE
+                5:  DISABLED
+-------------------------------------------------------------------------------------*)
+    IF NOT xEnable THEN
+        eOperatingMode := LVBreakerMode#DISABLED;
+    ELSIF LVBreaker.DI.xMaintenance THEN
+        eOperatingMode := LVBreakerMode#MAINTENANCE;
+    ELSE
+        CASE uiModeRequest OF
+    
+            1:
+                eOperatingMode := LVBreakerMode#AUTO;
+            2:
+                eOperatingMode := LVBreakerMode#MANUAL;
+            3:
+                eOperatingMode := LVBreakerMode#TEST;
+            4:
+                eOperatingMode := LVBreakerMode#MAINTENANCE;
+            5:
+                eOperatingMode := LVBreakerMode#DISABLED;
+            ELSE
+                eOperatingMode := LVBreakerMode#INVALID;
+        END_CASE;
+    END_IF;
+{endregion}
+
+{region 'Rack Position Decode'}
+(*-------------------------------------------------------------------------------------
+                                Determine Rack Position
+---------------------------------------------------------------------------------------*)
+    IF xRackedInDebounced AND NOT xTestPositionDebounced AND NOT xRackedOutDebounced THEN
+        
+        eRackPosition := LVBreakerRackPosition#RACKED_IN;
+        
+    ELSIF xTestPositionDebounced AND NOT xRackedInDebounced AND NOT xRackedOutDebounced THEN
+    
+        eRackPosition := LVBreakerRackPosition#TEST;
+    
+    ELSIF xRackedOutDebounced AND NOT xRackedInDebounced AND NOT xTestPositionDebounced THEN
+    
+        eRackPosition := LVBreakerRackPosition#RACKED_OUT;
+    
+    ELSIF NOT xRackedInDebounced AND NOT xTestPositionDebounced AND NOT xRackedOutDebounced THEN
+        // Breaker may be travelling between rack positions
+        eRackPosition := LVBreakerRackPosition#UNKNOWN;
+    ELSE
+        // Two or more position contacts are active
+        eRackPosition := LVBreakerRackPosition#INVALID;
+    
+    END_IF;
+{endregion}
+
+{region 'Control Authority'}
+(*-----------------------------------------------------------------------------------
+                        PLC CONTROL AUTHORITY
+            Mode selects the request source.
+            Authority determines whether the PLC may operate the coils.
+-------------------------------------------------------------------------------------*)
+    CASE eOperatingMode OF
+    
+        LVBreakerMode#AUTO,
+        LVBreakerMode#MANUAL:
+    
+            xControlAllowed     :=  xPLCControlAuthority
+                                    AND eRackPosition = LVBreakerRackPosition#RACKED_IN;
+    
+        LVBreakerMode#TEST:
+    
+            xControlAllowed     :=  xPLCControlAuthority
+                                    AND eRackPosition = LVBreakerRackPosition#TEST;
+    
+        ELSE
+    
+            xControlAllowed := FALSE;
+    
+    END_CASE;
+{endregion}
+
+{region 'Request Source Selection'}
+(*-------------------------------------------------------------------------------------
+                            Determine Type of Request
+---------------------------------------------------------------------------------------*)
+    CASE eOperatingMode OF
+    
+        LVBreakerMode#AUTO:
+            xOpenRequestPulse  := rtAutoOpenRequest.Q;
+            xCloseRequestPulse := rtAutoCloseRequest.Q;
+    
+        LVBreakerMode#MANUAL,
+        LVBreakerMode#TEST:
+            xOpenRequestPulse  := rtHMIOpenRequest.Q;
+            xCloseRequestPulse := rtHMICloseRequest.Q;
+    
+    END_CASE;
+{endregion}
+
+{region 'Calculate Faults'}
+(*-----------------------------------------------------------------------------------
+                            Calculate Faults
+-------------------------------------------------------------------------------------*)
+    //Feedback Fault IF:     Open AND closed
+    LVBreaker.Faults.xFeedbackFault             :=  tonFeedbackFaultDelay.Q;
+    
+    //Rack Position Fault IF:     RackPosition = Invalid
+    LVBreaker.Faults.xRackPositionFault         :=  eRackPosition = LVBreakerRackPosition#INVALID;
+    
+    //Control Supply Fault IF:     Report any control-supply problem
+    LVBreaker.Faults.xControlSupplyFault        :=  LVBreaker.DI.xMainControlSupplyTripped
+                                                    OR  LVBreaker.DI.xMotorSupplyTripped
+                                                    OR  LVBreaker.DI.xOpenCoilSupplyTripped
+                                                    OR  LVBreaker.DI.xCloseCoilSupplyTripped;
+    
+    // Major fault: unreliable feedback or breaker unable to opperate. - Only faults that prevent safe opening are blocking major faults
+    LVBreaker.Faults.xFault                     :=  LVBreaker.Faults.xFeedbackFault
+                                                    OR LVBreaker.Faults.xRackPositionFault
+                                                    OR LVBreaker.DI.xMainControlSupplyTripped
+                                                    OR LVBreaker.DI.xOpenCoilSupplyTripped;
+    
+{endregion}
+
+{region 'Derive Statuses'}
+(*-----------------------------------------------------------------------------------
+                                Set Statusses
+-------------------------------------------------------------------------------------*)
+        LVBreaker.Status.xOpen                  :=  xOpenFeedbackDebounced
+                                                    AND NOT xCloseFeedbackDebounced;
+        
+        LVBreaker.Status.xClosed                :=  xCloseFeedbackDebounced
+                                                    AND NOT xOpenFeedbackDebounced;
+        
+        LVBreaker.Status.xTripped               :=  LVBreaker.DI.xTrippedFeedback;
+        
+        LVBreaker.Status.xPLCControlAuthority   :=  xPLCControlAuthority;
+        
+        LVBreaker.Status.xReadyToClose          :=  xFieldReadyToCloseValid
+                                                    AND LVBreaker.Status.xOpen
+                                                    AND NOT LVBreaker.DI.xTrippedFeedback
+                                                    AND NOT LVBreaker.Faults.xControlSupplyFault
+                                                    AND (eRackPosition = LVBreakerRackPosition#RACKED_IN OR eRackPosition = LVBreakerRackPosition#TEST);
+        // A PLC command is active
+        LVBreaker.Status.xCommandBusy           := (eCurrentState = LVBreakerState#OPENING)
+                                                    OR (eCurrentState = LVBreakerState#CLOSING)
+                                                    OR (eCurrentState = LVBreakerState#RETRY_WAIT);
+
+        LVBreaker.Status.xRetryPending          :=  eCurrentState = LVBreakerState#RETRY_WAIT;
+        
+        // PLC is currently capable of opening the breaker
+        LVBreaker.Status.xCanOpen               :=  xControlAllowed
+                                                    AND LVBreaker.Status.xClosed
+                                                    AND LVBreaker.Interlocks.xExternalOpenPermit
+                                                    AND NOT LVBreaker.DI.xTrippedFeedback
+                                                    AND NOT LVBreaker.Faults.xFault;
+
+        // PLC is currently capable of closing the breaker
+        LVBreaker.Status.xCanClose              :=  xControlAllowed
+                                                    AND LVBreaker.Status.xReadyToClose
+                                                    AND LVBreaker.Interlocks.xExternalClosePermit
+                                                    AND NOT LVBreaker.Faults.xFault;
+        
+        // The FB is in Auto and the PLC has breaker-control authority
+        LVBreaker.Status.xAutoControlActive      := (eOperatingMode = LVBreakerMode#AUTO)
+                                                    AND xControlAllowed;
+    
+        
+    
+{endregion}
+
+{region 'Acknowledge  Alarms'}
+    IF rtHMIAlarmAcknowledge.Q THEN
+        LVBreaker.Alarms.xFailToOpen  := FALSE;
+        LVBreaker.Alarms.xFailToClose := FALSE;
+    END_IF;
+{endregion}
+
+
+
+
+
+
+
+</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>(*===================================================================================
+                                LV BREAKER FSM
+=====================================================================================*)
+
+{region 'FSM'}
+(*-----------------------------------------------------------------------------------
+                                FSM opperation
+-------------------------------------------------------------------------------------*)
+    IF NOT xEnable THEN
+        eNextState := LVBreakerState#UNKNOWN;
+        LVBreaker.Status.uiRetriesUsed := 0;
+    ELSIF LVBreaker.DI.xTrippedFeedback THEN
+        eNextState := LVBreakerState#TRIPPED;
+    ELSIF LVBreaker.Faults.xFault THEN
+        eNextState := LVBreakerState#FAULT;
+    ELSE
+    
+        CASE eCurrentState OF
+    
+            LVBreakerState#UNKNOWN:
+            
+                    IF xOpenFeedbackDebounced AND NOT xCloseFeedbackDebounced THEN
+                        
+                        eNextState := LVBreakerState#OPEN;
+                        
+                    ELSIF xCloseFeedbackDebounced AND NOT xOpenFeedbackDebounced THEN
+                        
+                        eNextState := LVBreakerState#CLOSED;
+                        
+                    END_IF;
+    
+            LVBreakerState#OPEN:
+            
+                    IF xControlAllowed THEN
+                        
+                        IF xCloseRequestPulse AND LVBreaker.Status.xCanClose THEN
+                            LVBreaker.Status.uiRetriesUsed  := 0;
+                            eRetryTargetState               := LVBreakerState#CLOSING;
+                            eNextState                      := LVBreakerState#CLOSING;
+                        ELSIF NOT LVBreaker.Status.xOpen THEN
+                            eNextState                      := LVBreakerState#UNKNOWN;
+                        END_IF;  
+                        
+                    ELSIF NOT LVBreaker.Status.xOpen THEN
+                        //Breaker isnt Open Anymore
+                        eNextState := LVBreakerState#UNKNOWN;
+                    END_IF;
+
+            LVBreakerState#CLOSED:
+    
+                    IF xControlAllowed THEN
+                        
+                        IF xOpenRequestPulse AND LVBreaker.Status.xCanOpen THEN
+                            LVBreaker.Status.uiRetriesUsed := 0;
+                            eRetryTargetState              := LVBreakerState#OPENING;
+                            eNextState                     := LVBreakerState#OPENING;
+                        ELSIF NOT LVBreaker.Status.xClosed THEN
+                            eNextState                      := LVBreakerState#UNKNOWN;
+                        END_IF;  
+                        
+                    ELSIF NOT LVBreaker.Status.xClosed THEN
+                        //Breaker isnt Closed Anymore
+                        eNextState := LVBreakerState#UNKNOWN;
+                    END_IF;
+    
+            LVBreakerState#TRIPPED:
+            
+                    IF xOpenFeedbackDebounced AND NOT xCloseFeedbackDebounced THEN
+    
+                        eNextState := LVBreakerState#OPEN;
+                
+                    ELSIF xCloseFeedbackDebounced AND NOT xOpenFeedbackDebounced THEN
+    
+                        eNextState := LVBreakerState#CLOSED;
+                
+                    ELSE
+                        // Trip cleared, but no stable position is confirmed
+                        eNextState := LVBreakerState#UNKNOWN;
+                
+                    END_IF;
+    
+            LVBreakerState#OPENING:
+            
+                    IF xControlAllowed THEN
+                        
+                        IF LVBreaker.Status.xOpen THEN
+                            // Opening completed
+                            eNextState := LVBreakerState#OPEN;
+                        ELSIF NOT LVBreaker.Interlocks.xExternalOpenPermit THEN
+                            // Opening is no longer allowed
+                            eNextState := LVBreakerState#UNKNOWN;
+                        ELSE
+                            //Check timeout
+                            IF tonOpenTimeout.Q THEN
+                                
+                                    //check retries only from a known, safe starting position
+                                    IF LVBreaker.Status.uiRetriesUsed &lt; uiMaxRetries AND LVBreaker.Status.xCanOpen THEN
+                                            LVBreaker.Status.uiRetriesUsed  := LVBreaker.Status.uiRetriesUsed + 1;
+                                            eNextState                      := LVBreakerState#RETRY_WAIT;
+                                    ELSE
+                                            LVBreaker.Alarms.xFailToOpen    := TRUE;
+                                            eNextState                      := LVBreakerState#UNKNOWN;
+                                    END_IF;
+                                    
+                            ELSE
+                                LVBreaker.DQ.xCmdOpen := NOT tonOpenPulse.Q;
+                            END_IF;
+                           
+                        END_IF;
+                        
+                    ELSE
+                        //PLC Has NO CONTROL
+                        eNextState := LVBreakerState#UNKNOWN;
+                    END_IF;
+    
+            LVBreakerState#CLOSING:
+            
+                    IF xControlAllowed THEN
+                        
+                        IF LVBreaker.Status.xClosed THEN
+                            // Closing completed
+                            eNextState := LVBreakerState#Closed;
+                        ELSIF NOT LVBreaker.Interlocks.xExternalClosePermit THEN
+                            // Closing is no longer allowed
+                            eNextState := LVBreakerState#UNKNOWN;
+                        ELSIF LVBreaker.Faults.xControlSupplyFault THEN
+                            //Fault occured with Control Supply
+                            eNextState := LVBreakerState#UNKNOWN;
+                        ELSE
+                            //Check timeout
+                            IF tonCloseTimeout.Q THEN
+                                
+                                    //check retries only from a known, safe starting position
+                                    IF LVBreaker.Status.uiRetriesUsed &lt; uiMaxRetries AND LVBreaker.Status.xCanClose THEN
+                                            LVBreaker.Status.uiRetriesUsed  := LVBreaker.Status.uiRetriesUsed + 1;
+                                            eNextState                      := LVBreakerState#RETRY_WAIT;
+                                    ELSE
+                                            LVBreaker.Alarms.xFailToClose   := TRUE;
+                                            eNextState                      := LVBreakerState#UNKNOWN;
+                                    END_IF;
+                                    
+                            ELSE
+                                LVBreaker.DQ.xCmdClose := NOT tonClosePulse.Q;
+                            END_IF;
+                           
+                        END_IF;
+                        
+                    ELSE
+                        //PLC Has NO CONTROL
+                        eNextState := LVBreakerState#UNKNOWN;
+                    END_IF;       
+    
+            LVBreakerState#RETRY_WAIT:
+
+                    IF xControlAllowed THEN
+                
+                        IF eRetryTargetState = LVBreakerState#OPENING OR eRetryTargetState = LVBreakerState#CLOSING THEN
+                            eNextState := eRetryTargetState;
+                        ELSE
+                            eNextState := LVBreakerState#INVALID;
+                        END_IF;
+                
+                    ELSE
+                        eNextState := LVBreakerState#UNKNOWN;
+                    END_IF;
+    
+            LVBreakerState#FAULT:
+
+                    IF xControlAllowed THEN
+                        
+                        IF rtHMIResetRequest.Q AND NOT LVBreaker.Faults.xFault THEN           
+                                eNextState := LVBreakerState#UNKNOWN;        
+                        END_IF;
+                        
+                    ELSE
+                        // Observer mode automatically recovers when the fault clears
+                        IF NOT LVBreaker.Faults.xFault THEN
+                            eNextState := LVBreakerState#UNKNOWN;
+                        END_IF;
+                        
+                    END_IF;
+    
+            LVBreakerState#INVALID:
+                    IF xOpenFeedbackDebounced AND NOT xCloseFeedbackDebounced THEN
+                
+                        eNextState := LVBreakerState#OPEN;
+                
+                    ELSIF xCloseFeedbackDebounced AND NOT xOpenFeedbackDebounced THEN
+                
+                        eNextState := LVBreakerState#CLOSED;
+                
+                    ELSIF NOT xOpenFeedbackDebounced AND NOT xCloseFeedbackDebounced THEN
+                
+                        eNextState := LVBreakerState#UNKNOWN;
+                
+                    END_IF;
+    
+    
+            ELSE
+                eNextState := LVBreakerState#INVALID;
+        END_CASE;
+    END_IF;
+{endregion}</ST>
+          </BodyContent>
+          <BodyContent xsi:type="ST">
+            <ST>(*===================================================================================
+                                    Set Outputs
+=====================================================================================*)
+
+{region 'Publish Operating Mode'}
+(*-----------------------------------------------------------------------------------
+                                Mode Control
+-------------------------------------------------------------------------------------*)
+    LVBreaker.OperatingMode := eOperatingMode;
+    
+    CASE eOperatingMode OF
+    
+        LVBreakerMode#INVALID:
+            LVBreaker.uiOperatingMode := 0;
+        LVBreakerMode#AUTO:
+            LVBreaker.uiOperatingMode := 1;
+        LVBreakerMode#MANUAL:
+            LVBreaker.uiOperatingMode := 2;
+        LVBreakerMode#TEST:
+            LVBreaker.uiOperatingMode := 3;
+        LVBreakerMode#MAINTENANCE:
+            LVBreaker.uiOperatingMode := 4;
+        LVBreakerMode#DISABLED:
+            LVBreaker.uiOperatingMode := 5;
+        ELSE
+            LVBreaker.uiOperatingMode := 0;
+    END_CASE;
+{endregion}
+
+{region 'Publish Current State'}
+(*-----------------------------------------------------------------------------------
+                                State Control
+-------------------------------------------------------------------------------------*)
+    LVBreaker.State := eCurrentState;
+
+    CASE eCurrentState OF
+    
+        LVBreakerState#UNKNOWN:
+            LVBreaker.uiState := 0;
+        LVBreakerState#OPEN:
+            LVBreaker.uiState := 1;
+        LVBreakerState#CLOSED:
+            LVBreaker.uiState := 2;
+        LVBreakerState#TRIPPED:
+            LVBreaker.uiState := 3;
+        LVBreakerState#OPENING:
+            LVBreaker.uiState := 4;
+        LVBreakerState#CLOSING:
+            LVBreaker.uiState := 5;
+        LVBreakerState#RETRY_WAIT:
+            LVBreaker.uiState := 6;
+        LVBreakerState#FAULT:
+            LVBreaker.uiState := 7;
+        LVBreakerState#INVALID:
+            LVBreaker.uiState := 8;
+        ELSE
+            LVBreaker.uiState := 8;
+    END_CASE;
+{endregion}
+
+{region 'Publish Rack Position'}
+(*-----------------------------------------------------------------------------------
+                                Rack Position
+-------------------------------------------------------------------------------------*)
+    LVBreaker.RackPosition := eRackPosition;
+    
+    CASE eRackPosition OF
+
+        LVBreakerRackPosition#UNKNOWN:
+            LVBreaker.uiRackPosition := 0;
+        LVBreakerRackPosition#RACKED_IN:
+            LVBreaker.uiRackPosition := 1;
+        LVBreakerRackPosition#TEST:
+            LVBreaker.uiRackPosition := 2;
+        LVBreakerRackPosition#RACKED_OUT:
+            LVBreaker.uiRackPosition := 3;
+        LVBreakerRackPosition#INVALID:
+            LVBreaker.uiRackPosition := 4;
+        ELSE
+            LVBreaker.uiRackPosition := 4;
+    END_CASE;
+{endregion}
+
+{region 'Publish Alarms'}
+    //General Alarm
+    LVBreaker.Alarms.xAlarm     :=  LVBreaker.Alarms.xFailToOpen 
+                                    OR LVBreaker.Alarms.xFailToClose;
+{endregion}
+
+
+{region 'Publish Control Owner'}
+(*----------------------------------------------------------------------------
+                                0 = UNKNOWN
+                                1 = PLC
+                                2 = DSE
+                                3 = LOCAL
+------------------------------------------------------------------------------*)
+    CASE eOperatingMode OF
+
+        LVBreakerMode#MAINTENANCE:
+            LVBreaker.uiControlOwner := 3; // Local
+
+        LVBreakerMode#AUTO,
+        LVBreakerMode#MANUAL,
+        LVBreakerMode#TEST:
+
+            IF xPLCControlAuthority THEN
+                LVBreaker.uiControlOwner := 1; // PLC
+            ELSE
+                // DHMBG-specific assumption:
+                // LV-Q2 to LV-Q4 are DSE-controlled.
+                LVBreaker.uiControlOwner := 2; // DSE
+            END_IF;
+
+    ELSE
+            // Disabled, invalid or unsupported mode
+            LVBreaker.uiControlOwner := 0; // Unknown/no active owner
+    END_CASE;
+{endregion}
+
+
+
+
+
+
+
+
+
+</ST>
+          </BodyContent>
+        </MainBody>
+      </FunctionBlock>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>

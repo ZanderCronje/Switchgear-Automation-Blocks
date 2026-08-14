@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="3152_SubstationPLC" version="1.0" creationDateTime="2026-08-12T13:42:23" modificationDateTime="2026-08-14T12:26:39">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <FunctionBlock name="fb_16chDI">
+        <AddData>
+          <Data name="pouData" handleUnknown="preserve">
+            <PouData>
+              <Folder>IO-Modules</Folder>
+              <ContentNode name="Metadata.meta" nodeType="MetadataDocument" displayName="Metadata">
+                <Xml xmlns="">
+                  <Metadata>
+                    <FolderType>PouFolder</FolderType>
+                    <ContentType>FunctionBlock</ContentType>
+                    <Kind>FunctionBlock</Kind>
+                    <Usings></Usings>
+                    <Id>2ce1ac81-3b50-4052-b5f1-c51bd1ff7e80</Id>
+                    <ItemGroup>
+                      <VariableWorksheet>
+                        <Id>e8417c88-903c-4e99-a03d-ddc985af4601</Id>
+                      </VariableWorksheet>
+                      <CodeWorksheet Include="Code.st">
+                        <Id>5a882ac1-cc74-4ee4-90eb-a2231de8d04b</Id>
+                        <Extension>.st</Extension>
+                        <Type>.st</Type>
+                        <ParentIndex>0</ParentIndex>
+                      </CodeWorksheet>
+                    </ItemGroup>
+                  </Metadata>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="VersionHistory.usermeta" nodeType="UserMetadata" displayName="Description">
+                <Xml xmlns="">
+                  <UserMetadataDoc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <UserMetadata Id="1be191c1-76d1-44d4-a578-3f9a61ddabac" xmlns="">
+                      <dcec>
+                        <dc:identifier></dc:identifier>
+                        <dc:title></dc:title>
+                      </dcec>
+                      <revTable />
+                      <DescriptionCollection>
+                        <Description relativePath=".\Description.html" format="HTML" />
+                        <Description relativePath=".\Description.rtf" format="RTF" />
+                      </DescriptionCollection>
+                    </UserMetadata>
+                  </UserMetadataDoc>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="Description.html" nodeType="UserMetadataDescription" displayName="Description.html" />
+              <ContentNode name="Resources.locreslst" nodeType="LocalResourcesListDocument" displayName="Resources" />
+              <ContentNode name="Variables.var.locres" nodeType="LocalResources" displayName="Variables">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <ContentNode name="User.locres" nodeType="LocalResources" displayName="User">
+                <Xml xmlns="">
+                  <ResourcesDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <IsUser>true</IsUser>
+                    <Languages ID="0" Name="Default" />
+                  </ResourcesDocument>
+                </Xml>
+              </ContentNode>
+              <VariableGroup name="16ch DI Module" id="856dcaac-9930-4da1-a377-82e3d9f36293" />
+              <VariableGroup name="Inputs" id="79cbcb8d-9fd7-40d0-8d45-c37a5be67b09" />
+              <VariableGroup name="Internal" id="00652286-eeeb-4199-b302-0c3c55d9e77d" />
+            </PouData>
+          </Data>
+        </AddData>
+        <Parameters>
+          <InoutVars>
+            <Variable name="DIModule" orderWithinParamSet="0">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>cef711d5-e7fb-4013-9edf-9c83df45e27b</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'856dcaac-9930-4da1-a377-82e3d9f36293'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>udt_16chDI</TypeName>
+              </Type>
+            </Variable>
+          </InoutVars>
+          <InputVars>
+            <Variable name="xSwapBytes" orderWithinParamSet="1">
+              <AddData>
+                <Data name="variableData" handleUnknown="preserve">
+                  <VariableData>
+                    <Id>5a2c9f64-5ab4-4df8-97e9-5774b6f0db4f</Id>
+                  </VariableData>
+                </Data>
+                <Data name="pragmasData" handleUnknown="preserve">
+                  <PragmasData>
+                    <CustomGroupReference>'79cbcb8d-9fd7-40d0-8d45-c37a5be67b09'</CustomGroupReference>
+                  </PragmasData>
+                </Data>
+              </AddData>
+              <Type>
+                <TypeName>BOOL</TypeName>
+              </Type>
+            </Variable>
+          </InputVars>
+        </Parameters>
+        <Vars accessSpecifier="private">
+          <Variable name="wWorkingData">
+            <AddData>
+              <Data name="variableData" handleUnknown="preserve">
+                <VariableData>
+                  <Id>c5061c95-9ccf-4c93-84b1-2cc9ca58692e</Id>
+                  <SortOrder>2</SortOrder>
+                </VariableData>
+              </Data>
+              <Data name="pragmasData" handleUnknown="preserve">
+                <PragmasData>
+                  <CustomGroupReference>'00652286-eeeb-4199-b302-0c3c55d9e77d'</CustomGroupReference>
+                </PragmasData>
+              </Data>
+            </AddData>
+            <Type>
+              <TypeName>WORD</TypeName>
+            </Type>
+          </Variable>
+        </Vars>
+        <MainBody>
+          <AddData>
+            <Data name="worksheetData" handleUnknown="preserve">
+              <WorksheetData>
+                <Name>Code</Name>
+              </WorksheetData>
+            </Data>
+          </AddData>
+          <BodyContent xsi:type="ST">
+            <ST>
+{region 'Generate Channel Addresses'}
+(*------------------------------------------------------------------ 
+            Convert the UINT module number to decimal text.
+--------------------------------------------------------------------*)
+    DIModule.DI0.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.0');
+    DIModule.DI1.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.1');
+    DIModule.DI2.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.2');
+    DIModule.DI3.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.3');
+    DIModule.DI4.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.4');
+    DIModule.DI5.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.5');
+    DIModule.DI6.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.6');
+    DIModule.DI7.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.7');
+    DIModule.DI8.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.8');
+    DIModule.DI9.sChannel  := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.9');
+    DIModule.DI10.sChannel := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.10');
+    DIModule.DI11.sChannel := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.11');
+    DIModule.DI12.sChannel := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.12');
+    DIModule.DI13.sChannel := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.13');
+    DIModule.DI14.sChannel := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.14');
+    DIModule.DI15.sChannel := TO_STRING(DIModule.uiModuleNumber, 'DI{0:D}.15');
+{endregion}
+
+
+{region 'BYTE SWAP'}
+(*------------------------------------------------------------------ 
+                Apply optional byte swapping. 
+--------------------------------------------------------------------*)
+    IF xSwapBytes THEN
+        wWorkingData.%B0 := DIModule.RawData.%B1;
+        wWorkingData.%B1 := DIModule.RawData.%B0;
+    ELSE
+        wWorkingData := DIModule.RawData;
+    END_IF;
+{endregion}
+
+{region 'Decode Raw Values'}
+    DIModule.DI0.xRaw  := wWorkingData.%X0;
+    DIModule.DI1.xRaw  := wWorkingData.%X1;
+    DIModule.DI2.xRaw  := wWorkingData.%X2;
+    DIModule.DI3.xRaw  := wWorkingData.%X3;
+    DIModule.DI4.xRaw  := wWorkingData.%X4;
+    DIModule.DI5.xRaw  := wWorkingData.%X5;
+    DIModule.DI6.xRaw  := wWorkingData.%X6;
+    DIModule.DI7.xRaw  := wWorkingData.%X7;
+    DIModule.DI8.xRaw  := wWorkingData.%X8;
+    DIModule.DI9.xRaw  := wWorkingData.%X9;
+    DIModule.DI10.xRaw := wWorkingData.%X10;
+    DIModule.DI11.xRaw := wWorkingData.%X11;
+    DIModule.DI12.xRaw := wWorkingData.%X12;
+    DIModule.DI13.xRaw := wWorkingData.%X13;
+    DIModule.DI14.xRaw := wWorkingData.%X14;
+    DIModule.DI15.xRaw := wWorkingData.%X15;
+{endregion}
+
+{region 'Bit Forcing'}
+    DIModule.DI0.xVal       :=      (DIModule.DI0.xRaw OR DIModule.DI0.xForceTrue)
+                            AND     NOT DIModule.DI0.xForceFalse;
+    DIModule.DI1.xVal       :=      (DIModule.DI1.xRaw OR DIModule.DI1.xForceTrue)
+                            AND     NOT DIModule.DI1.xForceFalse;
+    DIModule.DI2.xVal       :=      (DIModule.DI2.xRaw OR DIModule.DI2.xForceTrue)
+                            AND     NOT DIModule.DI2.xForceFalse;
+    DIModule.DI3.xVal       :=      (DIModule.DI3.xRaw OR DIModule.DI3.xForceTrue)
+                            AND     NOT DIModule.DI3.xForceFalse;
+    DIModule.DI4.xVal       :=      (DIModule.DI4.xRaw OR DIModule.DI4.xForceTrue)
+                            AND     NOT DIModule.DI4.xForceFalse;
+    DIModule.DI5.xVal       :=      (DIModule.DI5.xRaw OR DIModule.DI5.xForceTrue)
+                            AND     NOT DIModule.DI5.xForceFalse;
+    DIModule.DI6.xVal       :=      (DIModule.DI6.xRaw OR DIModule.DI6.xForceTrue)
+                            AND     NOT DIModule.DI6.xForceFalse;  
+    DIModule.DI7.xVal       :=      (DIModule.DI7.xRaw OR DIModule.DI7.xForceTrue)
+                            AND     NOT DIModule.DI7.xForceFalse;
+    DIModule.DI8.xVal       :=      (DIModule.DI8.xRaw OR DIModule.DI8.xForceTrue)
+                            AND     NOT DIModule.DI8.xForceFalse;
+    DIModule.DI9.xVal       :=      (DIModule.DI9.xRaw OR DIModule.DI9.xForceTrue)
+                            AND     NOT DIModule.DI9.xForceFalse;
+    DIModule.DI10.xVal       :=      (DIModule.DI10.xRaw OR DIModule.DI10.xForceTrue)
+                            AND     NOT DIModule.DI10.xForceFalse;
+    DIModule.DI11.xVal       :=      (DIModule.DI11.xRaw OR DIModule.DI11.xForceTrue)
+                            AND     NOT DIModule.DI11.xForceFalse;
+    DIModule.DI12.xVal       :=      (DIModule.DI12.xRaw OR DIModule.DI12.xForceTrue)
+                            AND     NOT DIModule.DI12.xForceFalse;
+    DIModule.DI13.xVal       :=      (DIModule.DI13.xRaw OR DIModule.DI13.xForceTrue)
+                            AND     NOT DIModule.DI13.xForceFalse;                            
+    DIModule.DI14.xVal       :=      (DIModule.DI14.xRaw OR DIModule.DI14.xForceTrue)
+                            AND     NOT DIModule.DI14.xForceFalse;
+    DIModule.DI15.xVal       :=      (DIModule.DI15.xRaw OR DIModule.DI15.xForceTrue)
+                            AND     NOT DIModule.DI15.xForceFalse;                            
+{endregion}
+
+{region 'Publish Values'}
+    DIModule.ProcessedData          :=      wWorkingData;
+    DIModule.ProcessedData.%X0      :=      DIModule.DI0.xVal;
+    DIModule.ProcessedData.%X1      :=      DIModule.DI1.xVal;
+    DIModule.ProcessedData.%X2      :=      DIModule.DI2.xVal;
+    DIModule.ProcessedData.%X3      :=      DIModule.DI3.xVal;
+    DIModule.ProcessedData.%X4      :=      DIModule.DI4.xVal;
+    DIModule.ProcessedData.%X5      :=      DIModule.DI5.xVal;
+    DIModule.ProcessedData.%X6      :=      DIModule.DI6.xVal;
+    DIModule.ProcessedData.%X7      :=      DIModule.DI7.xVal;
+    DIModule.ProcessedData.%X8      :=      DIModule.DI8.xVal;
+    DIModule.ProcessedData.%X9      :=      DIModule.DI9.xVal;
+    DIModule.ProcessedData.%X10     :=      DIModule.DI10.xVal;
+    DIModule.ProcessedData.%X11     :=      DIModule.DI11.xVal;
+    DIModule.ProcessedData.%X12     :=      DIModule.DI12.xVal;
+    DIModule.ProcessedData.%X13     :=      DIModule.DI13.xVal;
+    DIModule.ProcessedData.%X14     :=      DIModule.DI14.xVal;
+    DIModule.ProcessedData.%X15     :=      DIModule.DI15.xVal;
+{endregion}
+    
+</ST>
+          </BodyContent>
+        </MainBody>
+      </FunctionBlock>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>

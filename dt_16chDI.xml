@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 IEC61131_10_Ed1_0.xsd" schemaVersion="1.0" xmlns="www.iec.ch/public/TC65SC65BWG7TF10">
+  <FileHeader companyName="PHOENIX CONTACT GmbH &amp; Co. KG" companyURL="https://www.phoenixcontact.com" productName="PLCnext Engineer" productVersion="2026.0" productRelease="e4b87206ef835c0ed1fa2c7a8f3cc9c15b691897">
+    <AddData>
+      <Data name="fileHeaderData" handleUnknown="preserve">
+        <FileHeaderData>
+          <ExportKind>Simple</ExportKind>
+        </FileHeaderData>
+      </Data>
+    </AddData>
+  </FileHeader>
+  <ContentHeader name="3152_SubstationPLC" version="1.0" creationDateTime="2026-08-12T13:42:23" modificationDateTime="2026-08-14T12:26:39">
+    <CoordinateInfo>
+      <FbdScaling x="5" y="4" />
+      <LdScaling x="5" y="4" />
+      <SfcScaling x="5" y="4" />
+    </CoordinateInfo>
+  </ContentHeader>
+  <Types>
+    <GlobalNamespace>
+      <DataTypeDecl name="udt_16chDI">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_16chDI</Name>
+              <Folder>IO-Modules</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="sName">
+            <Documentation xsi:type="SimpleText"> Module Name</Documentation>
+            <Type>
+              <TypeName>STRING[20]</TypeName>
+            </Type>
+          </Member>
+          <Member name="uiModuleNumber">
+            <Documentation xsi:type="SimpleText"> Module Number</Documentation>
+            <Type>
+              <TypeName>UINT</TypeName>
+            </Type>
+          </Member>
+          <Member name="RawData">
+            <Documentation xsi:type="SimpleText"> RawData Word - Connect to Module</Documentation>
+            <Type>
+              <TypeName>WORD</TypeName>
+            </Type>
+          </Member>
+          <Member name="ProcessedData">
+            <Documentation xsi:type="SimpleText"> Processed Word</Documentation>
+            <Type>
+              <TypeName>WORD</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI0">
+            <Documentation xsi:type="SimpleText"> Channel 1</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI1">
+            <Documentation xsi:type="SimpleText"> Channel 2</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI2">
+            <Documentation xsi:type="SimpleText"> Channel 3</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI3">
+            <Documentation xsi:type="SimpleText"> Channel 4</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI4">
+            <Documentation xsi:type="SimpleText"> Channel 5</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI5">
+            <Documentation xsi:type="SimpleText"> Channel 6</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI6">
+            <Documentation xsi:type="SimpleText"> Channel 7</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI7">
+            <Documentation xsi:type="SimpleText"> Channel 8</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI8">
+            <Documentation xsi:type="SimpleText"> Channel 9</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI9">
+            <Documentation xsi:type="SimpleText"> Channel 10</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI10">
+            <Documentation xsi:type="SimpleText"> Channel 11</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI11">
+            <Documentation xsi:type="SimpleText"> Channel 12</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI12">
+            <Documentation xsi:type="SimpleText"> Channel 13</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI13">
+            <Documentation xsi:type="SimpleText"> Channel 14</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI14">
+            <Documentation xsi:type="SimpleText"> Channel 15</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+          <Member name="DI15">
+            <Documentation xsi:type="SimpleText"> Channel 16</Documentation>
+            <Type>
+              <TypeName>udt_SingleDIChannel</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+      <DataTypeDecl name="udt_SingleDIChannel">
+        <AddData>
+          <Data name="worksheetData" handleUnknown="preserve">
+            <WorksheetData>
+              <Name>dt_16chDI</Name>
+              <Folder>IO-Modules</Folder>
+            </WorksheetData>
+          </Data>
+        </AddData>
+        <UserDefinedTypeSpec xsi:type="StructTypeSpec">
+          <Member name="sLabel">
+            <Documentation xsi:type="SimpleText"> Channel Label</Documentation>
+            <Type>
+              <TypeName>STRING[20]</TypeName>
+            </Type>
+          </Member>
+          <Member name="sChannel">
+            <Documentation xsi:type="SimpleText"> ModuleNumber.ChannelNumber</Documentation>
+            <Type>
+              <TypeName>STRING[10]</TypeName>
+            </Type>
+          </Member>
+          <Member name="xRaw">
+            <Documentation xsi:type="SimpleText"> Raw DI Val</Documentation>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xVal">
+            <Documentation xsi:type="SimpleText"> Processed DI Val</Documentation>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xForceTrue">
+            <Documentation xsi:type="SimpleText"> Force channel ON</Documentation>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+          <Member name="xForceFalse">
+            <Documentation xsi:type="SimpleText"> Force channel OFF</Documentation>
+            <Type>
+              <TypeName>BOOL</TypeName>
+            </Type>
+          </Member>
+        </UserDefinedTypeSpec>
+      </DataTypeDecl>
+    </GlobalNamespace>
+  </Types>
+  <Instances />
+</Project>
